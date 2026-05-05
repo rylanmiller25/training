@@ -55,6 +55,8 @@ documentation:
   docs_index:
     - path: docs/
       description: optional_long_form_docs_referenced_from_CLAUDE_files
+    - path: docs/PLAN.md
+      description: year_long_training_program_spec_and_curriculum_phases
 
 architecture:
   project: personal_training_program_for_the_coming_year
