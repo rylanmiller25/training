@@ -31,3 +31,24 @@ Track what you completed, what you learned, and gaps to revisit. Update after fi
 **Next:**
 - 
 ```
+
+---
+
+## 2026-05-06
+
+**Done:**
+- Completed Phase 0
+- Completed CLI-LINUX module
+
+**Learned:**
+- Basics of the shell
+- Navigating file structure
+- Understanding what different programs do
+- Piping commands together
+
+**Gaps / revisit:**
+- What $PATH does and why it matters
+- Why and how to edit ~/.zshrc
+
+**Next:**
+- GIT-GITHUB module

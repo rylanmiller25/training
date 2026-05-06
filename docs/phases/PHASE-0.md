@@ -29,9 +29,9 @@
 ---
 
 ## Phase 0 is complete when:
-- [ ] Terminal, Git, and editor all confirmed working
-- [ ] `docs/GLOSSARY.md` has at least 5 entries you wrote
-- [ ] First log entry committed to `docs/LOG.md`
-- [ ] You can describe the 6 phases and their dependency order without looking
+- [X] Terminal, Git, and editor all confirmed working
+- [X] `docs/GLOSSARY.md` has at least 5 entries you wrote
+- [X] First log entry committed to `docs/LOG.md`
+- [X] You can describe the 6 phases and their dependency order without looking
 
 **Next:** Open `docs/phases/PHASE-1.md`

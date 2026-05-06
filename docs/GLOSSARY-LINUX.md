@@ -8,6 +8,10 @@ Running list of Linux commands, programs, and shell concepts. Add entries as you
 
 **`awk`** — Text processing tool for pattern scanning and field extraction; common for processing columnar data (`awk '{print $2}' file`).
 
+## B
+
+**`bash`** — The Bourne Again Shell; the default shell on most Linux systems. It's the program that reads your commands (or a script file) and executes them. When you open a terminal, bash is what's running. `zsh` is the default on macOS and is largely compatible.
+
 ## C
 
 **`cat`** — Concatenate and print file contents to stdout (`cat file.txt`).

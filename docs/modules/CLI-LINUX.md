@@ -2,7 +2,7 @@
 
 **Phase:** 1  
 **Slug:** `cli-linux`  
-**Status:** not started  
+**Status:** Started  
 
 ---
 
@@ -121,17 +121,17 @@ Write a script `docs/projects/hello-cli.sh` that:
 ---
 
 ## Checks — you understand this when you can:
-- [ ] Navigate the file system confidently without a GUI
-- [ ] Pipe commands together to filter and transform text output
-- [ ] Explain what `$PATH` is and why it matters
-- [ ] Read and modify your `.zshrc` file
-- [ ] Write a basic shell script with arguments and conditionals
-- [ ] Use `grep`/`rg` to search files by content
-- [ ] Explain what a process is and how to kill one
+- [X] Navigate the file system confidently without a GUI
+- [X] Pipe commands together to filter and transform text output
+- [X] Explain what `$PATH` is and why it matters
+- [X] Read and modify your `.zshrc` file
+- [X] Write a basic shell script with arguments and conditionals
+- [X] Use `grep`/`rg` to search files by content
+- [X] Explain what a process is and how to kill one
 
 ---
 
 ## Artifacts to commit
-- [ ] `docs/projects/hello-cli.sh` — your first shell script
-- [ ] Notes added to `docs/GLOSSARY.md` for: shell, PATH, environment variable, pipe, stdin/stdout
-- [ ] Log entry in `docs/LOG.md` after completing this module
+- [X] `docs/projects/hello-cli.sh` — your first shell script
+- [X] Notes added to `docs/GLOSSARY.md` for: shell, PATH, environment variable, pipe, stdin/stdout
+- [X] Log entry in `docs/LOG.md` after completing this module
