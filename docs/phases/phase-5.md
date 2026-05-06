@@ -31,6 +31,8 @@ Start with `prompt-eng` — everything else builds on the ability to write relia
 
 What you're building toward: prompts that you can version, test, and ship with confidence.
 
+> **→ Platform artifact:** Produce `docs/projects/experimentation_platform/explanation-prompts.md`. These are the prompts that translate causal forest output into plain-English insights for founders. Open [ROADMAP.md](../projects/experimentation_platform/ROADMAP.md) for what to include.
+
 ### rag
 **After prompt-eng and embeddings (Phase 4).**
 
@@ -48,6 +50,8 @@ What you're building toward: prompts that you can version, test, and ship with c
 3. Exercise Set 2 (incident analysis) — the AI Incident Database is sobering. Spend time here.
 4. Exercise Set 3 (interface critique) — look at a real AI-assisted tool. Use the 18 Microsoft principles as a lens.
 
+> **→ Platform artifact:** Produce `docs/projects/experimentation_platform/hitl-design.md`. Design the human review gates for high-stakes experiment recommendations on the platform. Open [ROADMAP.md](../projects/experimentation_platform/ROADMAP.md) for what to include.
+
 ### ai-telemetry
 **After hitl — monitoring is the production companion to HITL design.**
 
@@ -55,6 +59,8 @@ What you're building toward: prompts that you can version, test, and ship with c
 2. Exercise Set 1 (instrument a simple app) — add logging to your RAG project from the rag module. See what real traces look like.
 3. Exercise Set 2 (monitoring dashboard design) — write the design doc. The specific metrics you choose reveal your understanding.
 4. Exercise Set 3 (failure triage) — write 5 sample outputs yourself and categorize them. The act of labeling sharpens your ability to recognize failure categories.
+
+> **→ Platform artifact:** Produce `docs/projects/experimentation_platform/ml-telemetry-plan.md`. Design the telemetry strategy for the platform's ML components. Open [ROADMAP.md](../projects/experimentation_platform/ROADMAP.md) for what to include.
 
 ### red-teaming
 **After llm-failures and prompt-eng.**
@@ -65,6 +71,8 @@ What you're building toward: prompts that you can version, test, and ship with c
 4. Exercise Set 3 (red-team your own feature) — pick something you've built in this phase. This is the most valuable exercise.
 5. Exercise Set 4 (safety report) — read a real model safety report. Compare their methodology to what you just did.
 
+> **→ Platform artifact:** Produce `docs/projects/experimentation_platform/red-team-report.md`. Red-team the platform's ML outputs specifically — the causal forest and explanation features you're building. Open [ROADMAP.md](../projects/experimentation_platform/ROADMAP.md) for what to include.
+
 ### model-selection
 **Can be done any time after Phase 4 — independent of other Phase 5 modules.**
 
@@ -72,6 +80,8 @@ What you're building toward: prompts that you can version, test, and ship with c
 2. Exercise Set 1 (model comparison) — actually run the same 10 inputs through 3 models. Use something you actually care about evaluating.
 3. Exercise Set 2 (cost model) — build a spreadsheet. The calculation should feel mechanical by the end.
 4. Exercise Set 3 (compliance check) — research the DPA and HIPAA BAA questions. These come up constantly in enterprise sales.
+
+> **→ Platform artifact:** Produce `docs/projects/experimentation_platform/model-selection.md`. Select and justify the LLM for the platform's plain-English explanation feature. Open [ROADMAP.md](../projects/experimentation_platform/ROADMAP.md) for what to include.
 
 ### langchain
 **After rag — you'll understand what it's abstracting if you've done RAG manually.**
@@ -102,6 +112,8 @@ What you're building toward: prompts that you can version, test, and ship with c
 
 Key insight: Keystroke, n8n, and LangChain are solving the same problem at different layers of abstraction and for different audiences. Understanding all three gives you the vocabulary to have an informed opinion about tooling decisions.
 
+> **→ Platform artifact:** Produce `docs/projects/experimentation_platform/keystroke-integration.md`. Design a Keystroke agent that monitors platform results and triggers actions — significance alerts, anomaly tickets, weekly status summaries. Open [ROADMAP.md](../projects/experimentation_platform/ROADMAP.md) for what to include.
+
 ### openclaw
 **After red-teaming and hitl — you're applying those frameworks to a live agent.**
 
@@ -130,5 +142,13 @@ Key insight: Keystroke, n8n, and LangChain are solving the same problem at diffe
 - [ ] `docs/reading/openclaw-hitl-design.md` committed
 - [ ] `docs/projects/openclaw-n8n-integration.md` committed
 - [ ] Glossary has entries for: few-shot, chain-of-thought, RAG, chunking, faithfulness, HITL, drift detection, red-teaming, jailbreak, prompt injection, LCEL, ReAct, model card, Keystroke, MCP server, OpenClaw, AgentSkill, durable execution
+
+**Platform artifacts from this phase:**
+- [ ] `docs/projects/experimentation_platform/explanation-prompts.md` (from `prompt-eng`)
+- [ ] `docs/projects/experimentation_platform/hitl-design.md` (from `hitl`)
+- [ ] `docs/projects/experimentation_platform/ml-telemetry-plan.md` (from `ai-telemetry`)
+- [ ] `docs/projects/experimentation_platform/red-team-report.md` (from `red-teaming`)
+- [ ] `docs/projects/experimentation_platform/model-selection.md` (from `model-selection`)
+- [ ] `docs/projects/experimentation_platform/keystroke-integration.md` (from `keystroke`)
 
 **Next:** Open `docs/phases/phase-6.md`

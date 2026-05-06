@@ -1,8 +1,18 @@
 # Experimentation Platform — Module Roadmap
 
-When you complete a module, check this file to see if it produces a platform-specific artifact. Not every module does — only the ones listed here are directly applicable to building this platform.
+## How to use this file
 
-Work through modules in the order the phase plans specify. When you hit one listed here, produce the platform artifact alongside the module's standard exercise artifacts.
+Your workflow for each module:
+1. Open the phase plan and read the module's approach section
+2. Complete the module's exercises (as directed)
+3. When you see a `→ Platform artifact` callout in the phase plan, produce that artifact too
+4. Commit both the module artifact and the platform artifact before moving on
+
+The phase plans include a `→ Platform artifact` callout at the end of every relevant module section — you won't need to cross-reference this file mid-module. Come here for the full details on what each artifact should contain.
+
+Not every module produces a platform artifact — only the ones listed below are directly applicable to building the platform. The rest build knowledge that feeds into the platform indirectly.
+
+---
 
 ---
 

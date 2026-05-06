@@ -50,6 +50,8 @@ What you're trying to internalize:
 4. Exercise Set 3 (spot the leakage) — all three scenarios represent real mistakes that invalidate real ML projects.
 5. Exercise Set 4 (run a real evaluation) — Google Colab, scikit-learn breast cancer dataset. See what the numbers look like in practice.
 
+> **→ Platform artifact:** Produce `docs/projects/experimentation_platform/ml-eval-framework.md`. Design how you'll evaluate the reliability of the causal forest layer specifically. Open [ROADMAP.md](../projects/experimentation_platform/ROADMAP.md) for what to include.
+
 ### llm-eval
 **After ml-eval and transformers — applies the eval concepts to the LLM context.**
 
@@ -58,6 +60,8 @@ What you're trying to internalize:
 3. Exercise Set 2 (design an eval suite) — the support ticket summarization scenario. This is the most practically useful exercise in this module.
 4. Exercise Set 3 (LLM-as-judge experiment) — build a prompt that scores outputs. Notice where it agrees with you and where it doesn't.
 5. Exercise Set 4 (TruthfulQA paper) — read the abstract and the surprising result about larger models.
+
+> **→ Platform artifact:** Produce `docs/projects/experimentation_platform/llm-eval-plan.md`. Design how you'll evaluate the plain-English explanation feature specifically. Open [ROADMAP.md](../projects/experimentation_platform/ROADMAP.md) for what to include.
 
 ### rl-rlhf
 **After transformers and llm-failures — makes most sense after you understand what RLHF is trying to fix.**
@@ -76,6 +80,8 @@ What you're trying to internalize:
 3. Exercise Set 2 (streaming implementation) — write the streaming code. See how different the UX feels.
 4. Exercise Set 3 (prompt caching experiment) — if you're using the Anthropic API, actually verify you're hitting the cache.
 5. Exercise Set 4 (cost estimation) — do this calculation for a feature you'd actually want to build.
+
+> **→ Platform artifact:** Produce `docs/projects/experimentation_platform/ml-serving-design.md`. Design how the platform will serve causal forest and uplift model results at query time. Open [ROADMAP.md](../projects/experimentation_platform/ROADMAP.md) for what to include.
 
 ### llm-failures
 **Do this after transformers and before Phase 5 — this is the prerequisite for red-teaming and HITL design.**
@@ -99,5 +105,10 @@ What you're trying to internalize:
 - [ ] `docs/projects/streaming-demo.ts` committed
 - [ ] `docs/reading/hallucination-experiments.md` committed
 - [ ] Glossary has entries for: token, transformer, attention, context window, embedding, cosine similarity, precision, recall, AUC, RLHF, reward hacking, TTFT, hallucination, prompt injection, sycophancy
+
+**Platform artifacts from this phase:**
+- [ ] `docs/projects/experimentation_platform/ml-eval-framework.md` (from `ml-eval`)
+- [ ] `docs/projects/experimentation_platform/llm-eval-plan.md` (from `llm-eval`)
+- [ ] `docs/projects/experimentation_platform/ml-serving-design.md` (from `inference-opt`)
 
 **Next:** Open `docs/phases/phase-5.md`

@@ -30,6 +30,8 @@ Key things to internalize:
 - Why non-goals are as important as goals
 - The difference between a one-way and two-way door decision
 
+> **→ Platform artifact:** Produce `docs/projects/experimentation_platform/PRD.md`. Write the PRD for the experimentation platform MVP specifically. Open [ROADMAP.md](../projects/experimentation_platform/ROADMAP.md) for what to include.
+
 ### unit-economics
 **After prds — builds on product thinking with financial rigor.**
 
@@ -42,6 +44,8 @@ Key things to internalize:
 - LTV = ARPU ÷ churn rate (for steady-state businesses)
 - Why NRR > 100% means a business can grow even without new customers
 - The Magic Number and what a reading of 0.4 tells you
+
+> **→ Platform artifact:** Produce `docs/projects/experimentation_platform/unit-economics.md`. Model the pricing and unit economics for the platform specifically — usage-based vs. seat-based vs. experiment-volume pricing. Open [ROADMAP.md](../projects/experimentation_platform/ROADMAP.md) for what to include.
 
 ### financial-statements
 **After unit-economics — this adds the public company layer.**
@@ -71,6 +75,8 @@ Key things to internalize:
 - Opt-in (GDPR default) vs opt-out (CCPA default)
 - What a DPA is and why you need one with every vendor
 
+> **→ Platform artifact:** Produce `docs/projects/experimentation_platform/privacy-compliance.md`. An experiment platform tracks user behavior — the compliance obligations are significant. Open [ROADMAP.md](../projects/experimentation_platform/ROADMAP.md) for what to include.
+
 ### notion + figma
 **Do these when they're useful, not as a block.**
 
@@ -78,6 +84,8 @@ Key things to internalize:
 - `figma`: do this after you've read PRDs — the design → spec → build flow is most useful when you understand what a PRD is.
 
 These are tools, not concepts. The exercises matter more than the reading.
+
+> **→ Platform artifact (figma):** Produce `docs/projects/experimentation_platform/design-mockups.md`. Mockup the experiment setup flow, results dashboard, HTE segment view, and simulation screen. Open [ROADMAP.md](../projects/experimentation_platform/ROADMAP.md) for what to include.
 
 ---
 
@@ -89,5 +97,11 @@ These are tools, not concepts. The exercises matter more than the reading.
 - [ ] `docs/reading/financial-stmt-exercise.md` committed
 - [ ] `docs/reading/privacy-data-map.md` committed
 - [ ] Glossary has entries for: PRD, non-goal, LTV, CAC, NRR, churn, gross margin, EBITDA, deferred revenue, GDPR, CCPA, DPA
+
+**Platform artifacts from this phase:**
+- [ ] `docs/projects/experimentation_platform/PRD.md` (from `prds`)
+- [ ] `docs/projects/experimentation_platform/unit-economics.md` (from `unit-economics`)
+- [ ] `docs/projects/experimentation_platform/privacy-compliance.md` (from `privacy-compliance`)
+- [ ] `docs/projects/experimentation_platform/design-mockups.md` (from `figma`)
 
 **Next:** Open `docs/phases/phase-4.md`

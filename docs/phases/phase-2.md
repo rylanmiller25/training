@@ -30,6 +30,8 @@ Key things to internalize:
 - The difference between a volume and a bind mount
 - How `docker compose up` differs from running containers manually
 
+> **→ Platform artifact:** Produce `src/docker-compose.yml`. Open [ROADMAP.md](../projects/experimentation_platform/ROADMAP.md) for what to include.
+
 ### cloud
 **After docker — cloud is where containers live.**
 
@@ -43,6 +45,8 @@ Key things to internalize:
 - The specific AWS service for each of: file storage, running a container, triggered function, managed Postgres
 - Why data egress costs money and ingress is free
 - What a VPC and security group do
+
+> **→ Platform artifact:** Produce `docs/projects/experimentation_platform/deployment-architecture.md`. Design where each platform service runs, how it scales, and estimated cloud costs. Open [ROADMAP.md](../projects/experimentation_platform/ROADMAP.md) for what to include.
 
 ### cicd
 **After git-github and docker — CI/CD connects them.**
@@ -58,6 +62,8 @@ Key things to internalize:
 - What branch protection rules do and why they matter
 - The difference between continuous delivery and continuous deployment
 
+> **→ Platform artifact:** Produce `src/.github/workflows/` with a CI pipeline for the platform. Open [ROADMAP.md](../projects/experimentation_platform/ROADMAP.md) for what to include.
+
 ### system-design
 **Can be done any time in Phase 2 — no hard dependency.**
 
@@ -72,6 +78,8 @@ Key things to internalize:
 - When to use a message queue vs a direct API call
 - CAP theorem in one sentence
 
+> **→ Platform artifact:** Produce `docs/projects/experimentation_platform/system-design.md`. This is the full platform architecture — the most important design document you'll write. Open [ROADMAP.md](../projects/experimentation_platform/ROADMAP.md) for what to include.
+
 ### security
 **Do this last in Phase 2 — it builds on HTTP, SQL, and cloud.**
 
@@ -84,6 +92,8 @@ Key things to internalize:
 - The difference between authentication and authorization
 - Why parameterized queries prevent SQL injection
 - The OAuth 2.0 Authorization Code flow step by step
+
+> **→ Platform artifact:** Produce `docs/projects/experimentation_platform/security-model.md`. Design API auth, tenant isolation, data retention, and PII handling for the platform. Open [ROADMAP.md](../projects/experimentation_platform/ROADMAP.md) for what to include.
 
 ---
 
@@ -102,6 +112,8 @@ Key things to internalize:
 - How expressions (`{{ $json.field }}`) pass data between nodes
 - When you'd use n8n vs writing the automation in code (hint: the answer is usually "it depends on who needs to maintain it")
 
+> **→ Platform artifact:** Produce `docs/projects/experimentation_platform/n8n-workflows.md`. Design n8n workflows for experiment significance alerts, result review routing, and daily metrics digest. Open [ROADMAP.md](../projects/experimentation_platform/ROADMAP.md) for what to include.
+
 ---
 
 ## Phase 2 is complete when:
@@ -115,5 +127,13 @@ Key things to internalize:
 - [ ] `docs/projects/n8n-ai-agent-workflow.json` committed
 - [ ] `docs/reading/n8n-template-notes.md` committed
 - [ ] Glossary has entries for: container, image, Docker Compose, VPC, serverless, CI/CD, unit test, sharding, CAP theorem, SQL injection, JWT, n8n, webhook trigger, workflow automation
+
+**Platform artifacts from this phase:**
+- [ ] `src/docker-compose.yml` (from `docker`)
+- [ ] `docs/projects/experimentation_platform/deployment-architecture.md` (from `cloud`)
+- [ ] `src/.github/workflows/` (from `cicd`)
+- [ ] `docs/projects/experimentation_platform/system-design.md` (from `system-design`)
+- [ ] `docs/projects/experimentation_platform/security-model.md` (from `security`)
+- [ ] `docs/projects/experimentation_platform/n8n-workflows.md` (from `n8n`)
 
 **Next:** Open `docs/phases/phase-3.md` and `docs/phases/phase-4.md` — these can run in parallel.

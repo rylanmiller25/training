@@ -24,6 +24,8 @@ The landscape modules (1–4) can be done in any order. The capstone should be l
 4. Exercise Set 3 (vertical AI analysis) — pick an industry you have genuine curiosity about.
 5. Exercise Set 4 (investment thesis) — be honest about what you'd bet on and why. What would make you wrong is the hardest and most important question.
 
+> **→ Platform artifact:** Produce `docs/projects/experimentation_platform/competitive-analysis.md`. Map the experimentation platform landscape specifically — this directly informs your go-to-market. Open [ROADMAP.md](../projects/experimentation_platform/ROADMAP.md) for what to include.
+
 ### model-economics
 **After ai-landscape — the economics make more sense with the landscape context.**
 
@@ -33,6 +35,8 @@ The landscape modules (1–4) can be done in any order. The capstone should be l
 4. Exercise Set 3 (Chinchilla scaling laws) — read the abstract and Figure 1 only. Don't get lost in the math.
 5. Exercise Set 4 (commoditization strategy) — pick a real company. Be specific about their moat.
 
+> **→ Platform artifact:** Produce `docs/projects/experimentation_platform/ml-cost-model.md`. Model the compute costs for running causal forests at scale — this directly impacts the platform's pricing. Open [ROADMAP.md](../projects/experimentation_platform/ROADMAP.md) for what to include.
+
 ### hci-research
 **Independent — do whenever you have the most energy for it.**
 
@@ -40,6 +44,8 @@ The landscape modules (1–4) can be done in any order. The capstone should be l
 2. Exercise Set 2 (trust calibration analysis) — apply the framework to AI tools you've actually used.
 3. Exercise Set 3 (design an intelligent UI) — write a detailed design spec. This connects HCI theory to product work.
 4. Exercise Set 4 (research agenda) — write your own. Where would you actually investigate if you had the resources?
+
+> **→ Platform artifact:** Produce `docs/projects/experimentation_platform/ux-research-plan.md`. Design user research sessions for the platform — focus on the simulation feature and HTE results interpretation. Open [ROADMAP.md](../projects/experimentation_platform/ROADMAP.md) for what to include.
 
 ### robotics
 **This is a survey module — lighter reading, no build exercises.**
@@ -70,6 +76,8 @@ The capstone is not a module you "complete" — it's where everything lands.
 
 6. **Final log entry** — write a proper reflection in `docs/log.md`: what surprised you, what was harder than expected, what you'd do differently.
 
+> **→ Platform:** The capstone is the platform. By now `src/` should contain a working MVP. See [ROADMAP.md](../projects/experimentation_platform/ROADMAP.md) for the full list of what should be built.
+
 ---
 
 ## The program is complete when:
@@ -82,6 +90,12 @@ The capstone is not a module you "complete" — it's where everything lands.
 - [ ] `docs/reading/research-agenda.md` committed
 - [ ] Final `docs/log.md` entry committed
 - [ ] You can answer any of the 5 interview prompts without notes
+
+**Platform artifacts from this phase:**
+- [ ] `docs/projects/experimentation_platform/competitive-analysis.md` (from `ai-landscape`)
+- [ ] `docs/projects/experimentation_platform/ml-cost-model.md` (from `model-economics`)
+- [ ] `docs/projects/experimentation_platform/ux-research-plan.md` (from `hci-research`)
+- [ ] `src/` — working MVP (capstone)
 
 ---
 

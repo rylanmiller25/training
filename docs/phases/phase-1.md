@@ -57,6 +57,8 @@ Key things to internalize:
 - You should understand what headers are and why Authorization matters
 - You should be able to explain what a 401 vs 403 means
 
+> **→ Platform artifacts:** Produce `docs/projects/experimentation_platform/api-design.md` (from `http-apis`) and `docs/projects/experimentation_platform/api-collection.md` (from `postman`). Open [ROADMAP.md](../projects/experimentation_platform/ROADMAP.md) for what to include.
+
 ### sql
 **Can be done in parallel with http-apis — no dependency between them.**
 
@@ -69,6 +71,8 @@ Key things to internalize:
 - The JOIN types — draw a Venn diagram if it helps
 - Why `GROUP BY` + `HAVING` vs `WHERE` — they filter at different stages
 - When you'd reach for a window function instead of a GROUP BY
+
+> **→ Platform artifact:** Produce `docs/projects/experimentation_platform/data-model.md`. Design the database schema for the platform: experiments, variants, assignments, events, users, outcomes. Open [ROADMAP.md](../projects/experimentation_platform/ROADMAP.md) for what to include.
 
 ---
 
@@ -94,5 +98,10 @@ Don't move to Phase 2 until all five modules are marked `complete` in `docs/curr
 - [ ] `docs/projects/phase1-postman.json` committed (postman artifact)
 - [ ] `docs/reading/sql-analysis-notes.md` committed
 - [ ] Glossary has entries for: shell, PATH, commit, branch, pull request, HTTP, REST, status code, JWT, SQL, JOIN, window function
+
+**Platform artifacts from this phase:**
+- [ ] `docs/projects/experimentation_platform/api-design.md` (from `http-apis`)
+- [ ] `docs/projects/experimentation_platform/api-collection.md` (from `postman`)
+- [ ] `docs/projects/experimentation_platform/data-model.md` (from `sql`)
 
 **Next:** Open `docs/phases/phase-2.md`
