@@ -153,6 +153,11 @@ Save to `docs/reading/langchain-tradeoffs.md`.
 
 ---
 
+## After this module: Keystroke
+LangChain gives you the patterns (chains, agents, tools, memory). Keystroke gives you the infrastructure to run those patterns in production — hosting, retries, credential management, team sharing, and MCP exposure. After finishing LangChain, go to the `keystroke` module to see where these patterns land in a real deployment environment.
+
+---
+
 ## Checks — you understand this when you can:
 - [ ] Build a multi-step LCEL chain
 - [ ] Build a basic RAG pipeline using LangChain

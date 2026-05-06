@@ -104,6 +104,13 @@ Save to `docs/reading/hitl-interface-critique.md`.
 
 ---
 
+## HITL in practice: OpenClaw and Keystroke
+Two tools in this curriculum give you concrete HITL design surfaces:
+- **OpenClaw** (`openclaw` module): a local autonomous agent with real system access. The HITL exercise in that module asks you to design confirmation gates for specific skill categories — apply what you learned here.
+- **Keystroke** (`keystroke` module): its execution model supports pausing a workflow pending human approval. Build a Keystroke workflow with a HITL gate: if the AI output confidence is below a threshold, create a Linear ticket and wait for approval before proceeding.
+
+---
+
 ## Checks — you understand this when you can:
 - [ ] Explain 4 placement strategies for human review gates and when to use each
 - [ ] Design a review interface for a high-volume AI output workflow

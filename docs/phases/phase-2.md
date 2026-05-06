@@ -8,8 +8,9 @@
 3. `cicd` — how changes get from code to production
 4. `system-design` — how to reason about architecture
 5. `security` — how to not get owned
+6. `n8n` — workflow automation; event-driven glue between systems
 
-The first three have a loose dependency (docker → cloud → cicd is a natural order). System design and security are independent and can be done in any position.
+The first three have a loose dependency (docker → cloud → cicd is a natural order). System design, security, and n8n are independent and can be done in any position — though n8n makes most sense after CI/CD since both deal with event-driven automation.
 
 ---
 
@@ -86,14 +87,33 @@ Key things to internalize:
 
 ---
 
+### n8n
+**Do this after CI/CD — both deal with event-driven automation, and the contrast is instructive.**
+
+1. Read the "Trigger types" and "Key node types" sections before opening the UI.
+2. Exercise Set 1 (first workflow) — get something running before you read more. n8n is best learned by doing.
+3. Exercise Set 2 (webhook trigger) — this is the pattern you'll use constantly: something external fires → your workflow responds.
+4. Exercise Set 3 (multi-step automation) — the GitHub → format → Slack workflow is realistic internal tooling.
+5. Exercise Set 4 (AI agent workflow) — build the AI Agent node workflow. This is the bridge to Phase 5: you'll recognize this pattern inside Keystroke and LangChain.
+6. Exercise Set 5 (template library) — import a template and read every node. Other people's workflows are the best way to see patterns you wouldn't have thought of.
+
+Key things to internalize:
+- The difference between a trigger node and an action node
+- How expressions (`{{ $json.field }}`) pass data between nodes
+- When you'd use n8n vs writing the automation in code (hint: the answer is usually "it depends on who needs to maintain it")
+
+---
+
 ## Phase 2 is complete when:
-- [ ] All five modules marked `complete` in the curriculum map
+- [ ] All six modules marked `complete` in the curriculum map
 - [ ] `docs/projects/docker-hello/` committed with Dockerfile + docker-compose.yml
 - [ ] `.github/workflows/ci.yml` committed and running in GitHub Actions
 - [ ] `docs/projects/utils/math.ts` + `math.test.ts` committed
 - [ ] `docs/reading/system-design-tradeoffs.md` committed
 - [ ] `docs/reading/url-shortener-design.md` committed
 - [ ] `docs/reading/owasp-scenarios.md` committed
-- [ ] Glossary has entries for: container, image, Docker Compose, VPC, serverless, CI/CD, unit test, sharding, CAP theorem, SQL injection, JWT
+- [ ] `docs/projects/n8n-ai-agent-workflow.json` committed
+- [ ] `docs/reading/n8n-template-notes.md` committed
+- [ ] Glossary has entries for: container, image, Docker Compose, VPC, serverless, CI/CD, unit test, sharding, CAP theorem, SQL injection, JWT, n8n, webhook trigger, workflow automation
 
 **Next:** Open `docs/phases/phase-3.md` and `docs/phases/phase-4.md` — these can run in parallel.

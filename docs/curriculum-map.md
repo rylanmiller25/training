@@ -43,6 +43,7 @@ Deliverables:
 | CI/CD + testing | `cicd` | not started |
 | System design basics | `system-design` | not started |
 | Security basics | `security` | not started |
+| n8n — workflow automation | `n8n` | not started |
 
 **Unlocks:** Phase 3 (product craft) and Phase 4 (AI foundations both need this context)
 
@@ -92,6 +93,8 @@ Deliverables:
 | Model selection | `model-selection` | not started |
 | LangChain / LangGraph | `langchain` | not started |
 | Hugging Face | `huggingface` | not started |
+| Keystroke — AI agent platform | `keystroke` | not started |
+| OpenClaw — local autonomous agent | `openclaw` | not started |
 
 ---
 

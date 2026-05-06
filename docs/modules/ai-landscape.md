@@ -56,7 +56,7 @@ This module builds a map of who's doing what in AI — labs, products, investmen
 ```
 [Vertical apps] (customer-specific; e.g. Harvey for legal, Otter.ai for meetings)
 [Horizontal platforms] (Cursor, Notion AI, GitHub Copilot)
-[Developer tools + orchestration] (LangChain, LlamaIndex, Weights & Biases)
+[Developer tools + orchestration] (LangChain, LlamaIndex, Weights & Biases, Keystroke, n8n)
 [Foundation model APIs] (Anthropic, OpenAI, Google, Cohere)
 [Open source models] (Meta Llama, Mistral)
 [Cloud infrastructure] (AWS, GCP, Azure)

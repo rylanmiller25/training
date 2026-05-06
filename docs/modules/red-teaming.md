@@ -131,6 +131,13 @@ Save notes to `docs/reading/safety-report-analysis.md`.
 
 ---
 
+## Red-teaming real agents: OpenClaw and Keystroke
+The exercises above use public models as targets. The `openclaw` module gives you a running autonomous agent to red-team — one that has real computer access, making the stakes more concrete. The `keystroke` module includes an exercise to red-team a Keystroke agent you built yourself.
+
+Do both. Red-teaming something you built is more instructive than red-teaming something you didn't — you know where the weaknesses should be, and you're surprised when they're somewhere else.
+
+---
+
 ## Checks — you understand this when you can:
 - [ ] List 4 categories of adversarial inputs and give an example of each
 - [ ] Explain the difference between direct and indirect prompt injection

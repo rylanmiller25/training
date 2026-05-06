@@ -140,6 +140,15 @@ Find an open-source project on GitHub that uses GitHub Actions. (Examples: `vite
 
 ---
 
+## Integration with n8n
+GitHub Actions handles code-path automation (build, test, deploy). n8n handles everything else — event-driven business workflows that engineers shouldn't need to touch. A mature team uses both:
+- GitHub Actions: `push → test → deploy`
+- n8n: `deploy succeeded → notify Slack → update Linear → trigger QA workflow`
+
+When you finish this module, go straight to the `n8n` module to see the other half of the automation picture.
+
+---
+
 ## Checks — you understand this when you can:
 - [ ] Explain the difference between CI and CD
 - [ ] Write a GitHub Actions workflow from scratch

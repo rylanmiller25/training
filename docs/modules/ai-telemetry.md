@@ -100,6 +100,16 @@ Save to `docs/reading/failure-triage-exercise.md`.
 
 ---
 
+## Building telemetry pipelines with n8n
+For routing and reacting to telemetry signals without custom code, n8n is a natural fit:
+- n8n workflow polls your quality metrics endpoint → if score drops below threshold → creates a Linear ticket + sends Slack alert
+- n8n receives webhook from LangSmith on low-rated conversation → routes to human review queue
+- n8n aggregates daily metrics → posts summary to Slack
+
+This connects the `n8n` module (Phase 2) to production AI observability. If you haven't done the n8n module yet, come back to this after.
+
+---
+
 ## Checks — you understand this when you can:
 - [ ] List the 5 things you must log for every LLM call in production
 - [ ] Explain what drift detection is and how to alert on it

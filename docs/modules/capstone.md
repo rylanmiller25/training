@@ -87,6 +87,25 @@ Build a system that:
 
 Tech: TypeScript, embeddings, vector search, streaming
 
+### Option D: Keystroke Agent + n8n Pipeline
+Build a production-ready agent workflow:
+- A Keystroke agent that handles a recurring task (e.g. daily briefing, PR review summary, learning log update)
+- An n8n workflow that orchestrates the triggers and routes outputs (Slack notification, Notion page creation, GitHub comment)
+- Exposed as an MCP server so it's usable from Claude Code
+- HITL review gate for any action with external side effects
+
+Tech: Keystroke, n8n, Anthropic API, Slack/Notion integration
+
+### Option E: OpenClaw Personal Assistant
+Customize and deploy an OpenClaw-based personal assistant:
+- Extend with 3+ custom skills relevant to your workflow
+- Build HITL confirmation gates for any destructive actions
+- Add telemetry logging for all executions
+- Red-team it and document mitigations
+- Write a deployment guide others could follow
+
+Tech: OpenClaw, Docker, Telegram Bot API, custom AgentSkills
+
 ---
 
 ## Suggested sequence

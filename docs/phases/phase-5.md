@@ -11,8 +11,10 @@
 6. `model-selection` — how you pick the right model and platform
 7. `langchain` — the dominant framework for LLM applications
 8. `huggingface` — the open-source model ecosystem
+9. `keystroke` — production AI agent platform (TypeScript-native, MCP-integrated)
+10. `openclaw` — local autonomous agent for hands-on study
 
-Start with `prompt-eng` — everything else builds on the ability to write reliable prompts. After that, `rag` and `model-selection` should come before `langchain` (LangChain makes more sense once you've built RAG manually). The rest are relatively independent.
+Start with `prompt-eng` — everything else builds on the ability to write reliable prompts. After that, `rag` and `model-selection` should come before `langchain`. Do `keystroke` after `langchain` — it's the production layer on top of the patterns you'll have learned. Do `openclaw` after `red-teaming` and `hitl` — you'll apply those frameworks directly against a running agent.
 
 ---
 
@@ -88,6 +90,28 @@ What you're building toward: prompts that you can version, test, and ship with c
 3. Exercise Set 3 (Open LLM Leaderboard) — spend time understanding how the models compare.
 4. Exercise Set 4 (deploy a Space) — actually deploy something. A live URL matters.
 
+### keystroke
+**After langchain — Keystroke is the production layer on patterns you'll already understand.**
+
+1. Read the Keystroke docs and browse the template library before building anything.
+2. Exercise Set 1 (first agent) — get a working agent with a tool before anything else.
+3. Exercise Set 2 (workflow with integrations) — build something that connects to GitHub or Slack. Realistic internal tooling.
+4. Exercise Set 3 (persistent memory agent) — this is the most conceptually interesting exercise. Observe how the agent behaves differently with cached vs fresh context.
+5. Exercise Set 4 (MCP server setup) — connect a Keystroke agent to Claude Code. This is the integration that makes everything click together. Keep this running — you can use it throughout the rest of the program.
+6. Exercise Set 5 (red-team) — apply the red-teaming framework to your own agent. You built it; now break it.
+
+Key insight: Keystroke, n8n, and LangChain are solving the same problem at different layers of abstraction and for different audiences. Understanding all three gives you the vocabulary to have an informed opinion about tooling decisions.
+
+### openclaw
+**After red-teaming and hitl — you're applying those frameworks to a live agent.**
+
+1. Set up in Docker or a VM — not your primary machine. Read the safety section carefully first.
+2. Exercise Set 1 (setup) — get it running and connected to Telegram. Don't skip the sandboxing.
+3. Exercise Set 2 (skill exploration) — use it like a real tool for 30 minutes. Let the failures happen naturally.
+4. Exercise Set 3 (red-team it) — structured adversarial testing against a running agent. This will be more interesting than the theory.
+5. Exercise Set 4 (HITL guardrails) — design the guardrails you wish it had based on what you found.
+6. Exercise Set 5 (connect to n8n) — the inter-tool integration exercise. OpenClaw triggers n8n; n8n processes and responds.
+
 ---
 
 ## Phase 5 is complete when:
@@ -100,6 +124,11 @@ What you're building toward: prompts that you can version, test, and ship with c
 - [ ] `docs/projects/model-comparison.md` committed
 - [ ] `docs/projects/langchain-rag/` committed
 - [ ] `docs/projects/hf-space-demo.md` committed (with live URL)
-- [ ] Glossary has entries for: few-shot, chain-of-thought, RAG, chunking, faithfulness, HITL, drift detection, red-teaming, jailbreak, prompt injection, LCEL, ReAct, model card
+- [ ] `docs/projects/keystroke-mcp-setup.md` committed (Keystroke → Claude Code MCP connection working)
+- [ ] `docs/projects/keystroke-red-team.md` committed
+- [ ] `docs/projects/openclaw-red-team.md` committed
+- [ ] `docs/reading/openclaw-hitl-design.md` committed
+- [ ] `docs/projects/openclaw-n8n-integration.md` committed
+- [ ] Glossary has entries for: few-shot, chain-of-thought, RAG, chunking, faithfulness, HITL, drift detection, red-teaming, jailbreak, prompt injection, LCEL, ReAct, model card, Keystroke, MCP server, OpenClaw, AgentSkill, durable execution
 
 **Next:** Open `docs/phases/phase-6.md`
