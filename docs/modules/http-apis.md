@@ -1,9 +1,8 @@
 # Module: HTTP + REST APIs
 
-**Phase:** 1 (Weeks 2–6)  
+**Phase:** 1  
 **Slug:** `http-apis`  
 **Status:** not started  
-**Estimated time:** 6–8 hours
 
 ---
 

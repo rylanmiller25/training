@@ -1,9 +1,8 @@
 # Module: Security Basics
 
-**Phase:** 2 (Weeks 7–12)  
+**Phase:** 2  
 **Slug:** `security`  
 **Status:** not started  
-**Estimated time:** 6–8 hours
 
 ---
 

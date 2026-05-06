@@ -1,9 +1,8 @@
 # Module: Prompt Engineering
 
-**Phase:** 5 (Weeks 37–46)  
+**Phase:** 5  
 **Slug:** `prompt-eng`  
 **Status:** not started  
-**Estimated time:** 6–8 hours
 
 ---
 

@@ -1,9 +1,8 @@
 # Module: System Design Basics
 
-**Phase:** 2 (Weeks 7–12)  
+**Phase:** 2  
 **Slug:** `system-design`  
 **Status:** not started  
-**Estimated time:** 8–10 hours
 
 ---
 

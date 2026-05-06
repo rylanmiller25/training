@@ -1,31 +1,23 @@
-# Running Log
+# Learning Log
 
-Track what you learned, completed, and want to revisit. Update this at the end of each session.
+Track what you completed, what you learned, and gaps to revisit. Update after finishing each module or exercise set.
 
 ---
 
-## 2026-05-05 (Program Day 1 / Week 1 / Phase 0)
+## 2026-05-05 — Setup (Phase 0)
 
 **Done:**
-- Set up repo structure: `docs/`, `docs/modules/`, `docs/weekly/`, `docs/projects/`, `docs/reading/`
-- Created curriculum map at `docs/curriculum-map.md`
-- Created glossary at `docs/glossary.md`
-- Created Phase 1 module files: `cli-linux`, `git-github`, `http-apis`, `sql`
-- Created Week 1 plan at `docs/weekly/2026-18.md`
+- Built repo structure: `docs/`, `docs/modules/`, `docs/projects/`, `docs/reading/`
+- Created curriculum map, glossary, and this log
 
-**Learned:** *(fill in after first study session)*
-
-**Gaps / revisit:**
-- *(none yet)*
-
-**Next:** Begin Phase 1 — start with CLI/Linux basics. Open `docs/modules/cli-linux.md`.
+**Next:** Start Phase 1 — open `docs/modules/cli-linux.md`
 
 ---
 
 ## Template for future entries
 
 ```
-## YYYY-MM-DD (Program Week N / Phase N)
+## YYYY-MM-DD — <module or milestone>
 
 **Done:**
 - 

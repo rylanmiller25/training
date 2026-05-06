@@ -1,9 +1,8 @@
 # Module: Inference Optimization
 
-**Phase:** 4 (Weeks 23–36)  
+**Phase:** 4  
 **Slug:** `inference-opt`  
 **Status:** not started  
-**Estimated time:** 4–5 hours
 
 ---
 

@@ -1,9 +1,8 @@
 # Module: SQL
 
-**Phase:** 1 (Weeks 2–6)  
+**Phase:** 1  
 **Slug:** `sql`  
 **Status:** not started  
-**Estimated time:** 8–12 hours
 
 ---
 

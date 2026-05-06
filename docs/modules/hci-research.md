@@ -1,9 +1,8 @@
 # Module: HCI + AI Research Areas
 
-**Phase:** 6 (Weeks 47–52)  
+**Phase:** 6  
 **Slug:** `hci-research`  
 **Status:** not started  
-**Estimated time:** 6–8 hours
 
 ---
 

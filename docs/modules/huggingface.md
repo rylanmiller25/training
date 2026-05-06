@@ -1,9 +1,8 @@
 # Module: Hugging Face Ecosystem
 
-**Phase:** 5 (Weeks 37–46)  
+**Phase:** 5  
 **Slug:** `huggingface`  
 **Status:** not started  
-**Estimated time:** 4–5 hours
 
 ---
 

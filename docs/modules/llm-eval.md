@@ -1,9 +1,8 @@
 # Module: LLM Evaluation
 
-**Phase:** 4 (Weeks 23–36)  
+**Phase:** 4  
 **Slug:** `llm-eval`  
 **Status:** not started  
-**Estimated time:** 6–8 hours
 
 ---
 

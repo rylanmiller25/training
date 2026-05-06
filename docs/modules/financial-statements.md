@@ -1,9 +1,8 @@
 # Module: Financial Statements + SaaS Interpretation
 
-**Phase:** 3 (Weeks 13–22)  
+**Phase:** 3  
 **Slug:** `financial-statements`  
 **Status:** not started  
-**Estimated time:** 5–7 hours
 
 ---
 

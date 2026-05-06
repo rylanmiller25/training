@@ -1,9 +1,8 @@
 # Module: Docker
 
-**Phase:** 2 (Weeks 7–12)  
+**Phase:** 2  
 **Slug:** `docker`  
 **Status:** not started  
-**Estimated time:** 6–8 hours
 
 ---
 

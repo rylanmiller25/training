@@ -1,9 +1,8 @@
 # Module: LLM Failure Modes
 
-**Phase:** 4 (Weeks 23–36)  
+**Phase:** 4  
 **Slug:** `llm-failures`  
 **Status:** not started  
-**Estimated time:** 5–6 hours
 
 ---
 

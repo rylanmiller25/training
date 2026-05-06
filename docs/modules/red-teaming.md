@@ -1,9 +1,8 @@
 # Module: Red-Teaming + Adversarial Testing
 
-**Phase:** 5 (Weeks 37–46)  
+**Phase:** 5  
 **Slug:** `red-teaming`  
 **Status:** not started  
-**Estimated time:** 4–5 hours
 
 ---
 

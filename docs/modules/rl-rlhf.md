@@ -1,9 +1,8 @@
 # Module: RL + RLHF
 
-**Phase:** 4 (Weeks 23–36)  
+**Phase:** 4  
 **Slug:** `rl-rlhf`  
 **Status:** not started  
-**Estimated time:** 5–7 hours
 
 ---
 

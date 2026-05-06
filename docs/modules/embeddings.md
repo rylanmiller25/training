@@ -1,9 +1,8 @@
 # Module: Embeddings + Multimodal Models
 
-**Phase:** 4 (Weeks 23–36)  
+**Phase:** 4  
 **Slug:** `embeddings`  
 **Status:** not started  
-**Estimated time:** 5–6 hours
 
 ---
 

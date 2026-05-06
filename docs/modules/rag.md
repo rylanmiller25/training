@@ -1,9 +1,8 @@
 # Module: RAG (Retrieval-Augmented Generation)
 
-**Phase:** 5 (Weeks 37–46)  
+**Phase:** 5  
 **Slug:** `rag`  
 **Status:** not started  
-**Estimated time:** 7–9 hours
 
 ---
 

@@ -1,9 +1,8 @@
 # Module: CI/CD + Testing + Deployment Pipelines
 
-**Phase:** 2 (Weeks 7–12)  
+**Phase:** 2  
 **Slug:** `cicd`  
 **Status:** not started  
-**Estimated time:** 5–7 hours
 
 ---
 

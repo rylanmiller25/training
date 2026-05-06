@@ -1,9 +1,8 @@
 # Module: Capstone — Portfolio + Synthesis
 
-**Phase:** 6 (Weeks 47–52)  
+**Phase:** 6  
 **Slug:** `capstone`  
 **Status:** not started  
-**Estimated time:** 15–20 hours (spread across the final weeks)
 
 ---
 
@@ -90,16 +89,14 @@ Tech: TypeScript, embeddings, vector search, streaming
 
 ---
 
-## Timeline (spread across Weeks 47–52)
+## Suggested sequence
 
-| Week | Focus |
-|------|-------|
-| 47 | Choose demo project; start building |
-| 48 | Complete demo; write README |
-| 49 | Write portfolio narrative |
-| 50 | Write interview narratives (5) |
-| 51 | Deploy demo; polish all artifacts |
-| 52 | Review + reflection; update curriculum map with all statuses; share |
+1. Choose a demo project from the options above; start building
+2. Complete the demo; write its README
+3. Write the portfolio narrative
+4. Write the 5 interview narratives
+5. Deploy the demo; polish all artifacts
+6. Final review + reflection; update curriculum map with all statuses
 
 ---
 

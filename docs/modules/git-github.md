@@ -1,9 +1,8 @@
 # Module: Git + GitHub
 
-**Phase:** 1 (Weeks 2–6)  
+**Phase:** 1  
 **Slug:** `git-github`  
 **Status:** not started  
-**Estimated time:** 6–10 hours
 
 ---
 

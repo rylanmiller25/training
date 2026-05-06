@@ -1,9 +1,8 @@
 # Module: Robotics + Embodied AI (Survey)
 
-**Phase:** 6 (Weeks 47–52)  
+**Phase:** 6  
 **Slug:** `robotics`  
 **Status:** not started  
-**Estimated time:** 3–4 hours (survey only — no hands-on build)
 
 ---
 

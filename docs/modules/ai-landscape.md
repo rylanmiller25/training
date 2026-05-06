@@ -1,9 +1,8 @@
 # Module: AI Product Landscape + Lab Structures
 
-**Phase:** 6 (Weeks 47–52)  
+**Phase:** 6  
 **Slug:** `ai-landscape`  
 **Status:** not started  
-**Estimated time:** 5–6 hours
 
 ---
 

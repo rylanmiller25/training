@@ -1,9 +1,8 @@
 # Module: Privacy + Compliance
 
-**Phase:** 3 (Weeks 13–22)  
+**Phase:** 3  
 **Slug:** `privacy-compliance`  
 **Status:** not started  
-**Estimated time:** 4–5 hours
 
 ---
 

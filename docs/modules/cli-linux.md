@@ -1,9 +1,8 @@
 # Module: Linux + CLI Fluency
 
-**Phase:** 1 (Weeks 2–6) — start in Week 1  
+**Phase:** 1  
 **Slug:** `cli-linux`  
 **Status:** not started  
-**Estimated time:** 6–10 hours
 
 ---
 

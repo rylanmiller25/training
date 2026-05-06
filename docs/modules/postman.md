@@ -1,9 +1,8 @@
 # Module: Postman
 
-**Phase:** 1 (Weeks 2–6) — integrated with http-apis  
+**Phase:** 1 — integrated with http-apis  
 **Slug:** `postman`  
 **Status:** not started  
-**Estimated time:** 3–4 hours
 
 ---
 

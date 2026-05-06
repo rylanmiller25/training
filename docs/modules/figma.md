@@ -1,9 +1,8 @@
 # Module: Figma Fundamentals
 
-**Phase:** 3 (Weeks 13–22) — integrated tool module  
+**Phase:** 3 — integrated tool module  
 **Slug:** `figma`  
 **Status:** not started  
-**Estimated time:** 4–5 hours
 
 ---
 

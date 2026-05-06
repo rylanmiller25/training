@@ -1,9 +1,8 @@
 # Module: Predictive ML Evaluation Basics
 
-**Phase:** 4 (Weeks 23–36)  
+**Phase:** 4  
 **Slug:** `ml-eval`  
 **Status:** not started  
-**Estimated time:** 5–6 hours
 
 ---
 

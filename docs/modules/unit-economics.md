@@ -1,9 +1,8 @@
 # Module: Growth Metrics + Unit Economics
 
-**Phase:** 3 (Weeks 13–22)  
+**Phase:** 3  
 **Slug:** `unit-economics`  
 **Status:** not started  
-**Estimated time:** 6–8 hours
 
 ---
 

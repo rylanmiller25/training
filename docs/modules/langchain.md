@@ -1,9 +1,8 @@
 # Module: LangChain / LangGraph Patterns
 
-**Phase:** 5 (Weeks 37–46)  
+**Phase:** 5  
 **Slug:** `langchain`  
 **Status:** not started  
-**Estimated time:** 5–6 hours
 
 ---
 

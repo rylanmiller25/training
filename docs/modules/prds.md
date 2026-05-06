@@ -1,9 +1,8 @@
 # Module: PRDs + Product Decision-Making
 
-**Phase:** 3 (Weeks 13–22)  
+**Phase:** 3  
 **Slug:** `prds`  
 **Status:** not started  
-**Estimated time:** 6–8 hours
 
 ---
 

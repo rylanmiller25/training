@@ -1,9 +1,8 @@
 # Module: Transformer Intuition
 
-**Phase:** 4 (Weeks 23–36)  
+**Phase:** 4  
 **Slug:** `transformers`  
 **Status:** not started  
-**Estimated time:** 8–10 hours
 
 ---
 

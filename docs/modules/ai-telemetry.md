@@ -1,9 +1,8 @@
 # Module: AI Product Telemetry
 
-**Phase:** 5 (Weeks 37–46)  
+**Phase:** 5  
 **Slug:** `ai-telemetry`  
 **Status:** not started  
-**Estimated time:** 4–5 hours
 
 ---
 

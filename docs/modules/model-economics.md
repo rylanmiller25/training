@@ -1,9 +1,8 @@
 # Module: Model Economics + Commoditization
 
-**Phase:** 6 (Weeks 47–52)  
+**Phase:** 6  
 **Slug:** `model-economics`  
 **Status:** not started  
-**Estimated time:** 4–5 hours
 
 ---
 

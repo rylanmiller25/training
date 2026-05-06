@@ -1,9 +1,8 @@
 # Module: Notion
 
-**Phase:** 3 (Weeks 13–22) — integrated tool module  
+**Phase:** 3 — integrated tool module  
 **Slug:** `notion`  
 **Status:** not started  
-**Estimated time:** 3–4 hours
 
 ---
 
@@ -56,13 +55,13 @@ In Notion, create a workspace for this training program:
 3. Create a Kanban view grouped by Status
 4. Create a filtered view showing only Phase 1 modules
 
-**Set 2 — Weekly review template (20 min):**
-Create a template page for weekly reviews (mirrors `docs/weekly/<YYYY-WW>.md` structure):
-- Done this week
+**Set 2 — Learning log template (20 min):**
+Create a template page for learning log entries (mirrors `docs/log.md` structure):
+- Done
 - Learned
 - Gaps / revisit
-- Next week
-Test it: create this week's entry using the template.
+- Next
+Test it: create a log entry for the current module using the template.
 
 **Set 3 — GitHub integration (20 min):**
 Connect Notion to GitHub via the Notion GitHub integration (or Zapier free tier):
