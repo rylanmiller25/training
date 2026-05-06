@@ -13,6 +13,7 @@
 8. `huggingface` — the open-source model ecosystem
 9. `keystroke` — production AI agent platform (TypeScript-native, MCP-integrated)
 10. `openclaw` — local autonomous agent for hands-on study
+11. `intelligent-ui` — building AI-powered adaptive and predictive interfaces
 
 Start with `prompt-eng` — everything else builds on the ability to write reliable prompts. After that, `rag` and `model-selection` should come before `langchain`. Do `keystroke` after `langchain` — it's the production layer on top of the patterns you'll have learned. Do `openclaw` after `red-teaming` and `hitl` — you'll apply those frameworks directly against a running agent.
 
@@ -124,10 +125,23 @@ Key insight: Keystroke, n8n, and LangChain are solving the same problem at diffe
 5. Exercise Set 4 (HITL guardrails) — design the guardrails you wish it had based on what you found.
 6. Exercise Set 5 (connect to n8n) — the inter-tool integration exercise. OpenClaw triggers n8n; n8n processes and responds.
 
+### intelligent-ui
+**After prompt-eng and hitl — you need both to design AI interfaces responsibly.**
+
+1. Read the Google PAIR guidebook first — it's the practical reference for this module.
+2. Exercise Set 1 (critique) — pick a real AI-powered UI and evaluate it against the PAIR principles. Be specific about what fails.
+3. Exercise Set 2 (design) — design a predictive feature for a specific use case. Write the design doc before writing any code.
+4. Exercise Set 3 (implement) — build the TypeScript ghost text component. Get it working before polishing it.
+5. Exercise Set 4 (platform) — design the intelligent UI layer for the experimentation platform. This is the main platform artifact from this module.
+
+Key thing to internalize: every AI surface in a UI is a contract with the user — it implies the AI will be right enough, often enough, for the effort of adopting it to be worth it. The design question is always: what happens when it's wrong?
+
+> **→ Platform artifact:** Produce `docs/projects/experimentation_platform/INTELLIGENT-UI-DESIGN.md`. Design the adaptive and predictive UI layer for the results dashboard. Open [ROADMAP.md](../projects/experimentation_platform/ROADMAP.md) for what to include.
+
 ---
 
 ## Phase 5 is complete when:
-- [ ] All eight modules marked `complete` in the curriculum map
+- [ ] All eleven modules marked `complete` in the curriculum map
 - [ ] `docs/projects/structured-output-pipeline/` committed
 - [ ] `docs/projects/basic-rag/` committed
 - [ ] `docs/projects/HITL-WORKFLOW-DESIGN.md` committed
@@ -141,7 +155,8 @@ Key insight: Keystroke, n8n, and LangChain are solving the same problem at diffe
 - [ ] `docs/projects/OPENCLAW-RED-TEAM.md` committed
 - [ ] `docs/reading/OPENCLAW-HITL-DESIGN.md` committed
 - [ ] `docs/projects/OPENCLAW-N8N-INTEGRATION.md` committed
-- [ ] Glossary has entries for: few-shot, chain-of-thought, RAG, chunking, faithfulness, HITL, drift detection, red-teaming, jailbreak, prompt injection, LCEL, ReAct, model card, Keystroke, MCP server, OpenClaw, AgentSkill, durable execution
+- [ ] `docs/projects/INTELLIGENT-UI-DEMO/` committed
+- [ ] Glossary has entries for: few-shot, chain-of-thought, RAG, chunking, faithfulness, HITL, drift detection, red-teaming, jailbreak, prompt injection, LCEL, ReAct, model card, Keystroke, MCP server, OpenClaw, AgentSkill, durable execution, ghost text, intent modeling, adaptive interface
 
 **Platform artifacts from this phase:**
 - [ ] `docs/projects/experimentation_platform/EXPLANATION-PROMPTS.md` (from `prompt-eng`)
@@ -150,5 +165,6 @@ Key insight: Keystroke, n8n, and LangChain are solving the same problem at diffe
 - [ ] `docs/projects/experimentation_platform/RED-TEAM-REPORT.md` (from `red-teaming`)
 - [ ] `docs/projects/experimentation_platform/MODEL-SELECTION.md` (from `model-selection`)
 - [ ] `docs/projects/experimentation_platform/KEYSTROKE-INTEGRATION.md` (from `keystroke`)
+- [ ] `docs/projects/experimentation_platform/INTELLIGENT-UI-DESIGN.md` (from `intelligent-ui`)
 
 **Next:** Open `docs/phases/PHASE-6.md`

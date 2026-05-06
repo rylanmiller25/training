@@ -70,6 +70,7 @@ Not every module produces a platform artifact — only the ones listed below are
 | `red-teaming` | `docs/projects/experimentation_platform/RED-TEAM-REPORT.md` | Red-team the platform's ML outputs: can you manipulate the causal forest by gaming input data? Can you extract other companies' experiment data? What happens with adversarial inputs to the explanation feature? |
 | `model-selection` | `docs/projects/experimentation_platform/MODEL-SELECTION.md` | Which LLM to use for the explanation feature: evaluate on cost, latency, accuracy, and interpretability of output. Document the decision and tradeoffs. |
 | `keystroke` | `docs/projects/experimentation_platform/KEYSTROKE-INTEGRATION.md` | Design a Keystroke agent that monitors experiment results and triggers actions: notify team when significance reached, create Linear ticket when anomaly detected, summarize weekly experiment status. |
+| `intelligent-ui` | `docs/projects/experimentation_platform/INTELLIGENT-UI-DESIGN.md` | Design the adaptive UI layer for the results dashboard: how should the interface adapt to user expertise level? Where should ghost text or predictive suggestions appear in the experiment setup flow? How do you signal AI-generated explanations vs. raw data? |
 
 ---
 
@@ -94,3 +95,4 @@ The following modules build foundational knowledge that informs the platform but
 - `notion` — workflow tool; no platform artifact
 - `openclaw`, `robotics` — not applicable to this platform
 - `financial-statements` — background knowledge for unit-economics work
+- `social-computing`, `extended-reality`, `mobile-ubiquitous` — research/survey modules; inform your thinking about platform design but don't produce a platform artifact directly

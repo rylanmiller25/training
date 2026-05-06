@@ -95,6 +95,7 @@ Deliverables:
 | Hugging Face | `huggingface` | not started |
 | Keystroke — AI agent platform | `keystroke` | not started |
 | OpenClaw — local autonomous agent | `openclaw` | not started |
+| Predictive + Intelligent UI | `intelligent-ui` | not started |
 
 ---
 
@@ -107,12 +108,15 @@ Deliverables:
 | Model economics | `model-economics` | not started |
 | HCI + research areas | `hci-research` | not started |
 | Robotics + embodied AI | `robotics` | not started |
+| Social computing | `social-computing` | not started |
+| Extended reality (XR) | `extended-reality` | not started |
+| Mobile + ubiquitous computing | `mobile-ubiquitous` | not started |
 | Capstone | `capstone` | not started |
 
 ---
 
 ## How to navigate
-1. Open the phase plan in `docs/phases/phase-N.md` for the phase you're starting — it tells you the recommended approach for each module within that phase
+1. Open the phase plan in `docs/phases/PHASE-N.md` for the phase you're starting — it tells you the recommended approach for each module within that phase
 2. Mark modules `in progress` when you start, `complete` when all checks are done
 3. A module is complete when every check in its "Checks" section is ticked
 4. Move to the next module when checks pass — don't rush, don't linger

@@ -7,9 +7,12 @@
 2. `model-economics` — how the economics of AI work
 3. `hci-research` — the research areas at the intersection of AI and human experience
 4. `robotics` — embodied AI survey
-5. `capstone` — portfolio, demos, and interview prep
+5. `social-computing` — collective intelligence, platforms, reputation systems
+6. `extended-reality` — VR, AR, MR, and spatial computing
+7. `mobile-ubiquitous` — mobile design and the vision of computing everywhere
+8. `capstone` — portfolio, demos, and interview prep
 
-The landscape modules (1–4) can be done in any order. The capstone should be last.
+Modules 1–7 can be done in any order. The capstone should be last.
 
 ---
 
@@ -55,6 +58,33 @@ The landscape modules (1–4) can be done in any order. The capstone should be l
 3. Exercise Set 2 (watch and annotate) — watch one video and actually pause and annotate it.
 4. Exercise Set 3 (sim-to-real reading) — find a real paper or blog post. Write the summary.
 
+### social-computing
+**Do after hci-research — social computing is HCI applied to group behavior and platforms.**
+
+1. Read Chapters 1–2 of Kleinberg & Tardos (free online) before exercises.
+2. Exercise Set 1 (network analysis) — map a small real network. Identify bridge nodes and weak ties.
+3. Exercise Set 2 (reputation system design) — pick a domain and design from scratch. Cover cold start.
+4. Exercise Set 3 (platform analysis) — pick one platform and analyze its incentive mechanisms critically.
+5. Exercise Set 4 (CSCW paper) — read a real research paper from the proceedings. Synthesize the finding.
+
+### extended-reality
+**Independent — do whenever you're most curious about spatial computing.**
+
+1. Read the Apple Vision Pro HIG (design principles section) first — even if you never build for it, the thinking is transferable.
+2. Exercise Set 1 (platform comparison) — read Apple and Meta's developer guidelines; write the comparison.
+3. Exercise Set 2 (experience analysis) — try an XR experience or analyze one from video. Be specific about presence and input.
+4. Exercise Set 3 (interaction design) — design one XR interaction in full. Cover input, latency, and error handling.
+5. Exercise Set 4 (research survey) — browse IEEE VR or ISMAR proceedings; read one paper.
+
+### mobile-ubiquitous
+**Do before or alongside extended-reality — mobile is the foundation; XR is the next step.**
+
+1. Read Mark Weiser's 1991 paper first. It's short and will reframe everything else.
+2. Exercise Set 1 (context audit) — audit one app you use daily for context use. What context does it use? What could it use? What crosses a privacy line?
+3. Exercise Set 2 (notification design) — review your actual notification history for a day; then design a notification strategy for the platform.
+4. Exercise Set 3 (offline-first design) — design offline behavior for a mobile companion to the experimentation platform.
+5. Exercise Set 4 (UbiComp paper) — browse UbiComp proceedings; read one paper.
+
 ### capstone
 **Last. Do this after all other Phase 6 modules and after most of Phase 5.**
 
@@ -88,6 +118,12 @@ The capstone is not a module you "complete" — it's where everything lands.
 - [ ] `docs/reading/AI-LANDSCAPE-MAP.md` committed
 - [ ] `docs/reading/AI-INVESTMENT-THESIS.md` committed
 - [ ] `docs/reading/RESEARCH-AGENDA.md` committed
+- [ ] `docs/reading/SOCIAL-NETWORK-ANALYSIS.md` committed
+- [ ] `docs/reading/PLATFORM-ANALYSIS.md` committed
+- [ ] `docs/reading/XR-PLATFORM-COMPARISON.md` committed
+- [ ] `docs/reading/XR-INTERACTION-DESIGN.md` committed
+- [ ] `docs/reading/CONTEXT-AUDIT.md` committed
+- [ ] `docs/reading/NOTIFICATION-DESIGN.md` committed
 - [ ] Final `docs/LOG.md` entry committed
 - [ ] You can answer any of the 5 interview prompts without notes
 
