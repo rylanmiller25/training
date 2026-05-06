@@ -109,7 +109,17 @@ Deliverables:
 ---
 
 ## How to navigate
-1. Mark modules `in progress` when you start, `complete` when all checks are done
-2. A module is complete when every check in its "Checks" section is ticked
-3. Move to the next module when checks pass — don't rush, don't linger
-4. Log what you learned and any gaps in `docs/log.md`
+1. Open the phase plan in `docs/phases/phase-N.md` for the phase you're starting — it tells you the recommended approach for each module within that phase
+2. Mark modules `in progress` when you start, `complete` when all checks are done
+3. A module is complete when every check in its "Checks" section is ticked
+4. Move to the next module when checks pass — don't rush, don't linger
+5. Log what you learned and any gaps in `docs/log.md`
+
+## Phase plans
+- [Phase 0 — Setup](phases/phase-0.md)
+- [Phase 1 — Engineering Fundamentals](phases/phase-1.md)
+- [Phase 2 — Shipping Software](phases/phase-2.md)
+- [Phase 3 — Product Craft + Business/Finance](phases/phase-3.md)
+- [Phase 4 — AI Foundations](phases/phase-4.md)
+- [Phase 5 — AI Product Engineering](phases/phase-5.md)
+- [Phase 6 — Landscape + Capstone](phases/phase-6.md)
