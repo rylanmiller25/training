@@ -91,7 +91,7 @@ Agents should teach these tools in the context of shipping workflows.
 - Postman: API exploration, auth, environments, collections; connect to debugging and system integration
 
 ## Topic backlog (normalize into modules)
-All topics below have been converted to module files in `docs/modules/`. The curriculum map in `docs/curriculum-map.md` tracks status.
+All topics below have been converted to module files in `docs/modules/`. The curriculum map in `docs/CURRICULUM-MAP.md` tracks status.
 
 ## How agents should find resources
 For each module, agents should provide:

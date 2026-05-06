@@ -44,6 +44,10 @@ documentation:
   constraints:
     - keep_root_claude_under_200_lines
     - include_only_non_obvious_project_specific_guidance_or_overrides
+  markdown_filenames:
+    - all_markdown_filenames_must_be_uppercase_basename_with_lowercase_extension
+    - correct: GLOSSARY.md, CURRICULUM-MAP.md, PHASE-1.md
+    - incorrect: glossary.md, curriculum-map.md, phase-1.md
   structure:
     layering:
       - root_CLAUDE_md_is_short_and_generic

@@ -10,9 +10,9 @@ A personal, agent-assisted program to build technical fluency for software/AI pr
 | File | Purpose |
 |------|---------|
 | [docs/PLAN.md](docs/PLAN.md) | Full curriculum spec |
-| [docs/curriculum-map.md](docs/curriculum-map.md) | Phase map with module status tracking |
-| [docs/log.md](docs/log.md) | Running learning log |
-| [docs/glossary.md](docs/glossary.md) | Term definitions |
+| [docs/CURRICULUM-MAP.md](docs/CURRICULUM-MAP.md) | Phase map with module status tracking |
+| [docs/LOG.md](docs/LOG.md) | Running learning log |
+| [docs/GLOSSARY.md](docs/GLOSSARY.md) | Term definitions |
 | [docs/phases/](docs/phases/) | Phase plans — recommended approach for each phase |
 | [docs/modules/](docs/modules/) | Topic modules with resources + exercises |
 | [docs/projects/](docs/projects/) | Artifacts from exercises |
@@ -20,7 +20,7 @@ A personal, agent-assisted program to build technical fluency for software/AI pr
 
 ## How to use this
 
-1. Open [docs/curriculum-map.md](docs/curriculum-map.md) — find the current phase.
+1. Open [docs/CURRICULUM-MAP.md](docs/CURRICULUM-MAP.md) — find the current phase.
 2. Open that phase's plan in `docs/phases/` — it tells you the recommended approach and sequencing.
 3. Open the module file in `docs/modules/` — read the concepts, do the exercises, tick the checks.
 4. When all checks pass, mark the module `complete` in the curriculum map and log the session.
