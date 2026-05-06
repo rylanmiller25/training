@@ -10,9 +10,10 @@
 5. `social-computing` — collective intelligence, platforms, reputation systems
 6. `extended-reality` — VR, AR, MR, and spatial computing
 7. `mobile-ubiquitous` — mobile design and the vision of computing everywhere
-8. `capstone` — portfolio, demos, and interview prep
+8. `research-program-management` — managing AI research programs at labs like DeepMind
+9. `capstone` — portfolio, demos, and interview prep
 
-Modules 1–7 can be done in any order. The capstone should be last.
+Modules 1–8 can be done in any order, though `research-program-management` is best after `hci-research`. The capstone should be last.
 
 ---
 
@@ -85,6 +86,24 @@ Modules 1–7 can be done in any order. The capstone should be last.
 4. Exercise Set 3 (offline-first design) — design offline behavior for a mobile companion to the experimentation platform.
 5. Exercise Set 4 (UbiComp paper) — browse UbiComp proceedings; read one paper.
 
+### research-program-management
+**Do after hci-research and before the capstone — it synthesizes TPM skills with AI research context.**
+
+This is a synthesis module. If you haven't finished `program-management` and `technical-communication` from Phase 3 and `mlops` from Phase 4, do those first.
+
+1. Read the Gemini Technical Report overview (pp. 1–8) before doing any exercises. See what a major model program actually produces.
+2. Read the Anthropic Claude model card. Notice what is and isn't disclosed.
+3. Exercise Set 1 (AI lab org map) — do the DeepMind or Anthropic org mapping before reading the other exercises. Your prior knowledge + publicly available information only.
+4. Exercise Set 2 (research program milestones) — design milestones that are verifiable without being unrealistic about research timelines. This is the hardest design problem in the module.
+5. Exercise Set 3 (research brief for non-technical leadership) — apply everything from `technical-communication`. BLUF, Pyramid Principle, no jargon.
+6. Exercise Set 4 (safety report analysis) — read a real safety report. Notice what they claim they evaluated vs what they might not have.
+7. Exercise Set 5 (research-to-product handoff) — be specific. Name the real friction points, not hypothetical ones.
+
+Key things to internalize:
+- Research milestones use exploration gates, not delivery milestones
+- Managing researchers requires earning technical credibility — the "Technical" in TPM is not decorative
+- Safety evaluation is a coordination problem as much as a technical one
+
 ### capstone
 **Last. Do this after all other Phase 6 modules and after most of Phase 5.**
 
@@ -124,6 +143,11 @@ The capstone is not a module you "complete" — it's where everything lands.
 - [ ] `docs/reading/XR-INTERACTION-DESIGN.md` committed
 - [ ] `docs/reading/CONTEXT-AUDIT.md` committed
 - [ ] `docs/reading/NOTIFICATION-DESIGN.md` committed
+- [ ] `docs/reading/AI-LAB-ORG-MAP.md` committed
+- [ ] `docs/reading/RESEARCH-PROGRAM-MILESTONES.md` committed
+- [ ] `docs/reading/RESEARCH-BRIEF-EXERCISE.md` committed
+- [ ] `docs/reading/SAFETY-REPORT-ANALYSIS.md` committed
+- [ ] `docs/reading/RESEARCH-TO-PRODUCT-HANDOFF.md` committed
 - [ ] Final `docs/LOG.md` entry committed
 - [ ] You can answer any of the 5 interview prompts without notes
 

@@ -118,17 +118,17 @@ git stash / git stash pop
 ---
 
 ## Checks — you understand this when you can:
-- [ ] Explain what a commit, branch, and merge are without looking anything up
-- [ ] Create a branch, make changes, and open a pull request
-- [ ] Resolve a merge conflict
-- [ ] Use `git log --oneline --graph` to read history
-- [ ] Recover from common mistakes (undo a commit, unstage a file)
-- [ ] Explain the difference between `fetch` and `pull`
-- [ ] Explain what a `.gitignore` file does
+- [X] Explain what a commit, branch, and merge are without looking anything up
+- [X] Create a branch, make changes, and open a pull request
+- [X] Resolve a merge conflict
+- [X] Use `git log --oneline --graph` to read history
+- [X] Recover from common mistakes (undo a commit, unstage a file)
+- [X] Explain the difference between `fetch` and `pull`
+- [X] Explain what a `.gitignore` file does
 
 ---
 
 ## Artifacts to commit
-- [ ] `docs/scratch/` directory with practice files
-- [ ] At least one PR opened and merged on GitHub (this repo)
-- [ ] Glossary entries: commit, branch, merge, pull request, rebase, remote
+- [X] `docs/scratch/` directory with practice files
+- [X] At least one PR opened and merged on GitHub (this repo)
+- [X] Glossary entries: commit, branch, merge, pull request, rebase, remote

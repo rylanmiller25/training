@@ -57,6 +57,7 @@ Not every module produces a platform artifact — only the ones listed below are
 | `ml-eval` | `docs/projects/experimentation_platform/ML-EVAL-FRAMEWORK.md` | Evaluation framework for the causal forest layer: how do you know the HTE estimates are reliable? What metrics, what validation strategy, what thresholds trigger a warning to the user? |
 | `llm-eval` | `docs/projects/experimentation_platform/LLM-EVAL-PLAN.md` | Evaluation plan for the "explain this result in plain English" feature: what does a good explanation look like? How do you measure it? What failure modes matter most? |
 | `inference-opt` | `docs/projects/experimentation_platform/ML-SERVING-DESIGN.md` | Design for serving the causal forest and uplift model at query time: latency targets, batching strategy, caching, model update cadence. |
+| `mlops` | `docs/projects/experimentation_platform/TRAINING-PIPELINE-DESIGN.md` | Design the causal forest training pipeline: what triggers retraining, how are model versions tracked and promoted, how does the handoff from training to serving work, what drift thresholds trigger an alert? |
 
 ---
 
@@ -96,3 +97,5 @@ The following modules build foundational knowledge that informs the platform but
 - `openclaw`, `robotics` — not applicable to this platform
 - `financial-statements` — background knowledge for unit-economics work
 - `social-computing`, `extended-reality`, `mobile-ubiquitous` — research/survey modules; inform your thinking about platform design but don't produce a platform artifact directly
+- `program-management`, `technical-communication` — TPM skills; inform how you run and communicate the platform program but produce reading artifacts, not platform-specific docs
+- `research-program-management` — synthesis TPM module; applies to how you'd operate the platform at an AI lab but produces reading artifacts, not platform-specific docs

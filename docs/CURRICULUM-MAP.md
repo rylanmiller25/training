@@ -60,6 +60,8 @@ Deliverables:
 | Privacy + compliance | `privacy-compliance` | not started |
 | Notion | `notion` | not started |
 | Figma | `figma` | not started |
+| Program management | `program-management` | not started |
+| Technical communication | `technical-communication` | not started |
 
 ---
 
@@ -75,6 +77,7 @@ Deliverables:
 | RL + RLHF | `rl-rlhf` | not started |
 | Inference optimization | `inference-opt` | not started |
 | LLM failure modes | `llm-failures` | not started |
+| MLOps + ML lifecycle | `mlops` | not started |
 
 **Unlocks:** Phase 5
 
@@ -111,6 +114,7 @@ Deliverables:
 | Social computing | `social-computing` | not started |
 | Extended reality (XR) | `extended-reality` | not started |
 | Mobile + ubiquitous computing | `mobile-ubiquitous` | not started |
+| Research program management | `research-program-management` | not started |
 | Capstone | `capstone` | not started |
 
 ---

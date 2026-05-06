@@ -87,16 +87,54 @@ These are tools, not concepts. The exercises matter more than the reading.
 
 > **→ Platform artifact (figma):** Produce `docs/projects/experimentation_platform/DESIGN-MOCKUPS.md`. Mockup the experiment setup flow, results dashboard, HTE segment view, and simulation screen. Open [ROADMAP.md](../projects/experimentation_platform/ROADMAP.md) for what to include.
 
+### program-management
+**Do after prds — program management is the execution layer on top of product decisions.**
+
+1. Read the "What a TPM does" and "Program structure" sections first — internalize the vocabulary before doing any exercises.
+2. Exercise Set 1 (RACI matrix) — build a real matrix for a plausible project, not a toy example. The hardest part is finding the multiple-Accountable mistakes.
+3. Exercise Set 2 (dependency map) — map the causal forest feature dependencies. Draw the graph before building the table.
+4. Exercise Set 3 (risk register) — don't write abstract risks. Write specific, named risks with a named owner.
+5. Exercise Set 4 (program status update) — write a real one. Practice keeping it to one page.
+6. Exercise Set 5 (OKRs) — the hardest exercise. "Measurable" is the hard constraint. Don't accept vague key results.
+
+Key things to internalize:
+- RACI and why only one Accountable owner per decision
+- Critical path vs float — the distinction matters for triage
+- OKR grades: 0.7 at Google means the goal was appropriately ambitious
+
+### technical-communication
+**Do after program-management — the documents you write as a TPM depend on understanding the PM landscape.**
+
+1. Read the "Document type landscape" section first — memorize which document serves which purpose.
+2. Read Malte Ubl's "Design Docs at Google" post before starting Exercise Set 1.
+3. Exercise Set 1 (design doc) — this is the main artifact. Write all 7 sections. The "Alternatives considered" section is the one most people skip; don't.
+4. Exercise Set 2 (executive 1-pager) — practice BLUF. The recommendation comes first, every time.
+5. Exercise Set 3 (decision doc) — write the database decision. Be specific about tradeoffs.
+6. Exercise Set 4 (audience translation) — this is the skill interviewers actually probe for. Practice it.
+
+Key things to internalize:
+- The Pyramid Principle: conclusion first, then key arguments, then evidence
+- BLUF: the reader may stop after the first sentence; make that sentence count
+- "Alternatives considered" is the section that signals rigor
+
 ---
 
 ## Phase 3 is complete when:
-- [ ] All six modules marked `complete` in the curriculum map
+- [ ] All eight modules marked `complete` in the curriculum map
 - [ ] `docs/projects/MINI-PRD.md` committed
 - [ ] `docs/reading/SHAPE-UP-NOTES.md` committed
 - [ ] `docs/reading/UNIT-ECON-CALC.md` committed
 - [ ] `docs/reading/FINANCIAL-STMT-EXERCISE.md` committed
 - [ ] `docs/reading/PRIVACY-DATA-MAP.md` committed
-- [ ] Glossary has entries for: PRD, non-goal, LTV, CAC, NRR, churn, gross margin, EBITDA, deferred revenue, GDPR, CCPA, DPA
+- [ ] `docs/reading/RACI-EXERCISE.md` committed
+- [ ] `docs/reading/DEPENDENCY-MAP.md` committed
+- [ ] `docs/reading/RISK-REGISTER.md` committed
+- [ ] `docs/reading/PROGRAM-STATUS-TEMPLATE.md` committed
+- [ ] `docs/reading/OKRS-EXPERIMENTATION-PLATFORM.md` committed
+- [ ] `docs/reading/DESIGN-DOC-EXERCISE.md` committed
+- [ ] `docs/reading/EXEC-BRIEFING-EXERCISE.md` committed
+- [ ] `docs/reading/DECISION-DOC-EXERCISE.md` committed
+- [ ] Glossary has entries for: PRD, non-goal, LTV, CAC, NRR, churn, gross margin, EBITDA, deferred revenue, GDPR, CCPA, DPA, TPM, RACI, critical path, risk register, OKR, design doc, BLUF, decision doc
 
 **Platform artifacts from this phase:**
 - [ ] `docs/projects/experimentation_platform/PRD.md` (from `prds`)

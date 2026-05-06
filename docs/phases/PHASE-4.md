@@ -92,10 +92,27 @@ What you're trying to internalize:
 4. Exercise Set 3 (sycophancy test) — this one is often surprising. The capitulation can be subtle.
 5. Exercise Set 4 (failure taxonomy) — apply the framework to a real AI product you've used.
 
+### mlops
+**Do this after inference-opt and llm-failures — it connects the ML foundations to operational reality.**
+
+1. Read Andriy Burkov chapters 1–3 before doing any exercises. The vocabulary is essential.
+2. Read the Sculley "Hidden Technical Debt" paper before Exercise Set 3. It's 10 pages; read it properly.
+3. Exercise Set 1 (W&B setup) — get something actually running in W&B. Don't skip because it requires account setup.
+4. Exercise Set 2 (ML lifecycle diagram) — draw the causal forest lifecycle specifically. Vague diagrams are useless.
+5. Exercise Set 3 (Sculley analysis) — write the specific risks for the experimentation platform, not general observations.
+6. Exercise Set 4 (deployment workflow) — define explicit go/no-go criteria. "Accuracy is good enough" is not a criterion.
+
+Key things to internalize:
+- Training-serving skew: why it happens and how feature stores prevent it
+- Model drift vs data drift: different causes, different responses
+- The Sculley debt types: pipeline jungles and feedback loops are the most common in real systems
+
+> **→ Platform artifact:** Produce `docs/projects/experimentation_platform/TRAINING-PIPELINE-DESIGN.md`. Design how the causal forest training pipeline is structured, what triggers retraining, how model versions are managed, and how the handoff from training to serving is coordinated. Open [ROADMAP.md](../projects/experimentation_platform/ROADMAP.md) for what to include.
+
 ---
 
 ## Phase 4 is complete when:
-- [ ] All seven modules marked `complete` in the curriculum map
+- [ ] All eight modules marked `complete` in the curriculum map
 - [ ] `docs/reading/TOKENIZATION-NOTES.md` committed
 - [ ] `docs/projects/EMBEDDING-EXPERIMENT.md` committed
 - [ ] `docs/projects/semantic-search/` committed
@@ -104,11 +121,16 @@ What you're trying to internalize:
 - [ ] `docs/reading/REWARD-HACKING-EXAMPLES.md` committed
 - [ ] `docs/projects/streaming-demo.ts` committed
 - [ ] `docs/reading/HALLUCINATION-EXPERIMENTS.md` committed
-- [ ] Glossary has entries for: token, transformer, attention, context window, embedding, cosine similarity, precision, recall, AUC, RLHF, reward hacking, TTFT, hallucination, prompt injection, sycophancy
+- [ ] `docs/reading/WANDB-EXERCISE.md` committed
+- [ ] `docs/reading/ML-LIFECYCLE-DIAGRAM.md` committed
+- [ ] `docs/reading/ML-DEBT-ANALYSIS.md` committed
+- [ ] `docs/reading/MODEL-DEPLOYMENT-WORKFLOW.md` committed
+- [ ] Glossary has entries for: token, transformer, attention, context window, embedding, cosine similarity, precision, recall, AUC, RLHF, reward hacking, TTFT, hallucination, prompt injection, sycophancy, MLOps, experiment tracking, model registry, feature store, training-serving skew, data drift, concept drift, canary deployment
 
 **Platform artifacts from this phase:**
 - [ ] `docs/projects/experimentation_platform/ML-EVAL-FRAMEWORK.md` (from `ml-eval`)
 - [ ] `docs/projects/experimentation_platform/LLM-EVAL-PLAN.md` (from `llm-eval`)
 - [ ] `docs/projects/experimentation_platform/ML-SERVING-DESIGN.md` (from `inference-opt`)
+- [ ] `docs/projects/experimentation_platform/TRAINING-PIPELINE-DESIGN.md` (from `mlops`)
 
 **Next:** Open `docs/phases/PHASE-5.md`
