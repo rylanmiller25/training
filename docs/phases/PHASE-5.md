@@ -167,4 +167,7 @@ Key thing to internalize: every AI surface in a UI is a contract with the user �
 - [ ] `docs/projects/experimentation_platform/KEYSTROKE-INTEGRATION.md` (from `keystroke`)
 - [ ] `docs/projects/experimentation_platform/INTELLIGENT-UI-DESIGN.md` (from `intelligent-ui`)
 
+**Website content from this phase:**
+- [ ] `docs/writing/AI-INTERPRETATION-EXPLAINER.md` — write this after completing `prompt-eng` and `intelligent-ui`. Explain what the AI interpretation layer does and why it matters — why showing a chart isn't enough, what it means for an LLM to read a statistical output honestly, and how the platform decides when to be confident vs. uncertain in its language. Two versions: one for a technical reader interested in the design decisions, one for a founder who just wants to know what the AI actually does and whether to trust it.
+
 **Next:** Open `docs/phases/PHASE-6.md`

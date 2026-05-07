@@ -131,7 +131,9 @@ The capstone is not a module you "complete" — it's where everything lands.
 
 ## The program is complete when:
 - [ ] All modules in all phases marked `complete` in the curriculum map
-- [ ] At least one demo deployed with a live URL
+- [ ] Platform MVP deployed with a live URL
+- [ ] Personal website live with platform, research, and all three writing pieces — each in two audience versions
+- [ ] `docs/projects/WEBSITE.md` committed with the live URL
 - [ ] `docs/projects/PORTFOLIO.md` written and committed
 - [ ] `docs/projects/INTERVIEW-NARRATIVES.md` written and committed (all 5 prompts)
 - [ ] `docs/reading/AI-LANDSCAPE-MAP.md` committed

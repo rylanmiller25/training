@@ -133,4 +133,7 @@ Key things to internalize:
 - [ ] `docs/projects/experimentation_platform/ML-SERVING-DESIGN.md` (from `inference-opt`)
 - [ ] `docs/projects/experimentation_platform/TRAINING-PIPELINE-DESIGN.md` (from `mlops`)
 
+**Website content from this phase:**
+- [ ] `docs/writing/HTE-EXPLAINER.md` — two versions: technical (for someone who knows ML/econometrics) and layperson (for a founder who's never heard of causal inference). Write this after completing `ml-eval` and `inference-opt` — once you understand the core statistical machinery well enough to explain it honestly. This becomes the most substantive piece on the platform section of your website.
+
 **Next:** Open `docs/phases/PHASE-5.md`

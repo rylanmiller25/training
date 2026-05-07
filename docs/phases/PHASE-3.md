@@ -124,6 +124,8 @@ Key things to internalize:
 ### technical-communication
 **Do after program-management — the documents you write as a TPM depend on understanding the PM landscape.**
 
+> **→ Website content:** After completing this module, write the first content piece for your personal website: an explanation of what the experimentation platform is and why it exists, in two versions. Version 1: for a technical reader who knows A/B testing (a data scientist or PM at a tech company). Version 2: for a non-technical founder who's never run an experiment. Apply everything from this module — BLUF, Pyramid Principle, writing for the reader not yourself. Save both to `docs/writing/PLATFORM-EXPLAINER.md`. These are the first pieces that will go on the site.
+
 1. Read the "Document type landscape" section first — memorize which document serves which purpose.
 2. Read Malte Ubl's "Design Docs at Google" post before starting Exercise Set 1.
 3. Exercise Set 1 (design doc) — this is the main artifact. Write all 7 sections. The "Alternatives considered" section is the one most people skip; don't.
@@ -158,6 +160,7 @@ Key things to internalize:
 - [ ] `docs/reading/DESIGN-DOC-EXERCISE.md` committed
 - [ ] `docs/reading/EXEC-BRIEFING-EXERCISE.md` committed
 - [ ] `docs/reading/DECISION-DOC-EXERCISE.md` committed
+- [ ] `docs/writing/PLATFORM-EXPLAINER.md` committed (two versions — technical + layperson)
 - [ ] Glossary has entries for: PRD, non-goal, LTV, CAC, NRR, churn, gross margin, EBITDA, deferred revenue, GDPR, CCPA, DPA, Agile, Scrum, sprint, backlog, story point, velocity, WIP limit, DORA metrics, user story, acceptance criteria, TPM, RACI, critical path, risk register, OKR, design doc, BLUF, decision doc
 
 **Platform artifacts from this phase:**
