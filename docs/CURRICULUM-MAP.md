@@ -44,6 +44,7 @@ Deliverables:
 | System design basics | `system-design` | not started |
 | Security basics | `security` | not started |
 | n8n — workflow automation | `n8n` | not started |
+| Advanced SQL + analytics engineering | `advanced-sql` | not started |
 
 **Unlocks:** Phase 3 (product craft) and Phase 4 (AI foundations both need this context)
 
@@ -60,6 +61,7 @@ Deliverables:
 | Privacy + compliance | `privacy-compliance` | not started |
 | Notion | `notion` | not started |
 | Figma | `figma` | not started |
+| Agile methods + team execution | `agile` | not started |
 | Program management | `program-management` | not started |
 | Technical communication | `technical-communication` | not started |
 

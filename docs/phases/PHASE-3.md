@@ -11,6 +11,9 @@
 4. `privacy-compliance` — what constraints shape product decisions?
 5. `notion` — integrated tool module
 6. `figma` — integrated tool module
+7. `agile` — how software teams organize and execute work
+8. `program-management` — TPM fundamentals: RACI, OKRs, risk registers, cross-team coordination
+9. `technical-communication` — design docs, executive briefings, decision records
 
 ---
 
@@ -87,8 +90,24 @@ These are tools, not concepts. The exercises matter more than the reading.
 
 > **→ Platform artifact (figma):** Produce `docs/projects/experimentation_platform/DESIGN-MOCKUPS.md`. Mockup the experiment setup flow, results dashboard, HTE segment view, and simulation screen. Open [ROADMAP.md](../projects/experimentation_platform/ROADMAP.md) for what to include.
 
+### agile
+**Do after prds and before program-management — Agile is team-level; program management coordinates across Agile teams.**
+
+1. Read the Agile Manifesto and all 12 principles before anything else. It takes 10 minutes and is load-bearing.
+2. Watch the "Scrum in 20 minutes" video, then read the Scrum Guide. The video gives you the picture; the Guide gives you the precision.
+3. Exercise Set 1 (principles notes) — write the ceremony removal thought experiment before looking for answers. The reasoning matters more than the answer.
+4. Exercise Set 2 (user stories) — write them for the platform, not a hypothetical product. Acceptance criteria are the hard part; don't write vague ones.
+5. Exercise Set 3 (sprint planning) — actually constrain yourself to 30 points. The tradeoff decisions are the exercise.
+6. Exercise Set 4 (retrospective) — design for the specific situation described, not a generic retro format.
+7. Exercise Set 5 (cross-team dependencies) — this is the TPM exercise. Think about what breaks if Squad A slips 1 week.
+
+Key things to internalize:
+- The three Scrum roles and why the Scrum Master is not a project manager
+- WIP limits in Kanban: they feel counterintuitive until you understand the queueing theory
+- DORA metrics: deploy frequency and lead time are the ones that actually correlate with outcomes
+
 ### program-management
-**Do after prds — program management is the execution layer on top of product decisions.**
+**Do after agile — program management is the cross-team coordination layer on top of team-level Agile.**
 
 1. Read the "What a TPM does" and "Program structure" sections first — internalize the vocabulary before doing any exercises.
 2. Exercise Set 1 (RACI matrix) — build a real matrix for a plausible project, not a toy example. The hardest part is finding the multiple-Accountable mistakes.
@@ -120,12 +139,17 @@ Key things to internalize:
 ---
 
 ## Phase 3 is complete when:
-- [ ] All eight modules marked `complete` in the curriculum map
+- [ ] All nine modules marked `complete` in the curriculum map
 - [ ] `docs/projects/MINI-PRD.md` committed
 - [ ] `docs/reading/SHAPE-UP-NOTES.md` committed
 - [ ] `docs/reading/UNIT-ECON-CALC.md` committed
 - [ ] `docs/reading/FINANCIAL-STMT-EXERCISE.md` committed
 - [ ] `docs/reading/PRIVACY-DATA-MAP.md` committed
+- [ ] `docs/reading/AGILE-PRINCIPLES-NOTES.md` committed
+- [ ] `docs/reading/USER-STORIES-EXERCISE.md` committed
+- [ ] `docs/reading/SPRINT-PLANNING-EXERCISE.md` committed
+- [ ] `docs/reading/RETROSPECTIVE-EXERCISE.md` committed
+- [ ] `docs/reading/CROSS-TEAM-DEPENDENCIES.md` committed
 - [ ] `docs/reading/RACI-EXERCISE.md` committed
 - [ ] `docs/reading/DEPENDENCY-MAP.md` committed
 - [ ] `docs/reading/RISK-REGISTER.md` committed
@@ -134,7 +158,7 @@ Key things to internalize:
 - [ ] `docs/reading/DESIGN-DOC-EXERCISE.md` committed
 - [ ] `docs/reading/EXEC-BRIEFING-EXERCISE.md` committed
 - [ ] `docs/reading/DECISION-DOC-EXERCISE.md` committed
-- [ ] Glossary has entries for: PRD, non-goal, LTV, CAC, NRR, churn, gross margin, EBITDA, deferred revenue, GDPR, CCPA, DPA, TPM, RACI, critical path, risk register, OKR, design doc, BLUF, decision doc
+- [ ] Glossary has entries for: PRD, non-goal, LTV, CAC, NRR, churn, gross margin, EBITDA, deferred revenue, GDPR, CCPA, DPA, Agile, Scrum, sprint, backlog, story point, velocity, WIP limit, DORA metrics, user story, acceptance criteria, TPM, RACI, critical path, risk register, OKR, design doc, BLUF, decision doc
 
 **Platform artifacts from this phase:**
 - [ ] `docs/projects/experimentation_platform/PRD.md` (from `prds`)

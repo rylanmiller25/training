@@ -9,8 +9,9 @@
 4. `system-design` — how to reason about architecture
 5. `security` — how to not get owned
 6. `n8n` — workflow automation; event-driven glue between systems
+7. `advanced-sql` — analytics SQL, query optimization, and experiment analysis queries
 
-The first three have a loose dependency (docker → cloud → cicd is a natural order). System design, security, and n8n are independent and can be done in any position — though n8n makes most sense after CI/CD since both deal with event-driven automation.
+The first three have a loose dependency (docker → cloud → cicd is a natural order). System design, security, n8n, and advanced-sql are independent and can be done in any position — advanced-sql only requires the Phase 1 sql module as a prerequisite.
 
 ---
 
@@ -114,10 +115,24 @@ Key things to internalize:
 
 > **→ Platform artifact:** Produce `docs/projects/experimentation_platform/N8N-WORKFLOWS.md`. Design n8n workflows for experiment significance alerts, result review routing, and daily metrics digest. Open [ROADMAP.md](../projects/experimentation_platform/ROADMAP.md) for what to include.
 
+### advanced-sql
+**Do after sql (Phase 1) — can be done any time in Phase 2, independently of Docker/Cloud/CI/CD.**
+
+1. Read "Use The Index, Luke" chapters 1–3 before touching EXPLAIN ANALYZE. The mental model comes first.
+2. Exercise Set 1 (EXPLAIN ANALYZE) — you need a real Postgres instance with real data volume. Use `generate_series` to create synthetic data; don't skip because setup takes time.
+3. Exercise Set 2 (cohort analysis) — the cohort query is the hardest in this module. Write it in stages: cohort assignment first, then activity join, then the retention calculation.
+4. Exercise Set 3 (experiment SQL) — these queries directly power the platform's results dashboard. Write them as if they'll go into production.
+5. Exercise Set 4 (dbt) — get something actually running. The goal is a working `dbt run`, not a perfect model.
+
+Key things to internalize:
+- EXPLAIN ANALYZE output: Seq Scan vs Index Scan, estimated vs actual rows, where the cost is
+- The cohort retention pattern — you'll use this constantly in product analytics
+- JSONB and why it matters for flexible event schemas
+
 ---
 
 ## Phase 2 is complete when:
-- [ ] All six modules marked `complete` in the curriculum map
+- [ ] All seven modules marked `complete` in the curriculum map
 - [ ] `docs/projects/docker-hello/` committed with Dockerfile + docker-compose.yml
 - [ ] `.github/workflows/ci.yml` committed and running in GitHub Actions
 - [ ] `docs/projects/utils/math.ts` + `math.test.ts` committed
@@ -126,7 +141,11 @@ Key things to internalize:
 - [ ] `docs/reading/OWASP-SCENARIOS.md` committed
 - [ ] `docs/projects/n8n-ai-agent-workflow.json` committed
 - [ ] `docs/reading/N8N-TEMPLATE-NOTES.md` committed
-- [ ] Glossary has entries for: container, image, Docker Compose, VPC, serverless, CI/CD, unit test, sharding, CAP theorem, SQL injection, JWT, n8n, webhook trigger, workflow automation
+- [ ] `docs/reading/QUERY-OPTIMIZATION-EXERCISE.md` committed
+- [ ] `docs/reading/COHORT-ANALYSIS-EXERCISE.md` committed
+- [ ] `docs/reading/EXPERIMENT-SQL-QUERIES.md` committed
+- [ ] `docs/reading/DBT-EXERCISE.md` committed
+- [ ] Glossary has entries for: container, image, Docker Compose, VPC, serverless, CI/CD, unit test, sharding, CAP theorem, SQL injection, JWT, n8n, webhook trigger, workflow automation, EXPLAIN ANALYZE, cohort analysis, JSONB, dbt, analytics engineering
 
 **Platform artifacts from this phase:**
 - [ ] `src/docker-compose.yml` (from `docker`)
