@@ -1,54 +1,137 @@
 # Learning Log
 
-Track what you completed, what you learned, and gaps to revisit. Update after finishing each module or exercise set.
+Notes on each module as you work through it. Jot down what clicked, what didn't, gaps to revisit, connections you noticed.
 
 ---
 
-## 2026-05-05 — Setup (Phase 0)
+## Phase 0 — Setup
 
-**Done:**
-- Built repo structure: `docs/`, `docs/modules/`, `docs/projects/`, `docs/reading/`
-- Created curriculum map, glossary, and this log
-
-**Next:** Start Phase 1 — open `docs/modules/CLI-LINUX.md`
+2026-05-05 — Built repo structure: `docs/`, `docs/modules/`, `docs/projects/`, `docs/reading/`. Created curriculum map, glossary, and this log.
 
 ---
 
-## Template for future entries
+## Phase 1 — Engineering Fundamentals
 
-```
-## YYYY-MM-DD — <module or milestone>
+### CLI-Linux
 
-**Done:**
-- 
+2026-05-06 — Completed.
 
-**Learned:**
-- 
+Learned: basics of the shell, navigating file structure, understanding what different programs do, piping commands together.
 
-**Gaps / revisit:**
-- 
+Gaps to revisit: what $PATH does and why it matters, how and why to edit ~/.zshrc.
 
-**Next:**
-- 
-```
+### Git + GitHub
+
+### HTTP + REST APIs
+
+### Postman
+
+### SQL
 
 ---
 
-## 2026-05-06
+## Phase 2 — Shipping Software
 
-**Done:**
-- Completed Phase 0
-- Completed CLI-LINUX module
+### Docker
 
-**Learned:**
-- Basics of the shell
-- Navigating file structure
-- Understanding what different programs do
-- Piping commands together
+### Cloud Fundamentals
 
-**Gaps / revisit:**
-- What $PATH does and why it matters
-- Why and how to edit ~/.zshrc
+### CI/CD + Testing
 
-**Next:**
-- GIT-GITHUB module
+### System Design
+
+### Security
+
+### n8n
+
+### Advanced SQL + Analytics Engineering
+
+---
+
+## Phase 3 — Product Craft + Business/Finance
+
+### PRDs
+
+### Unit Economics
+
+### Financial Statements
+
+### Privacy + Compliance
+
+### Notion
+
+### Figma
+
+### Agile
+
+### Program Management
+
+### Technical Communication
+
+---
+
+## Phase 4 — AI Foundations
+
+### Transformers
+
+### Embeddings
+
+### Predictive ML Evaluation
+
+### LLM Evaluation
+
+### RL + RLHF
+
+### Inference Optimization
+
+### LLM Failure Modes
+
+### MLOps + ML Lifecycle
+
+---
+
+## Phase 5 — AI Product Engineering
+
+### Prompt Engineering
+
+### RAG
+
+### HITL Design
+
+### AI Telemetry
+
+### Red-Teaming
+
+### Model Selection
+
+### LangChain / LangGraph
+
+### Hugging Face
+
+### Keystroke
+
+### OpenClaw
+
+### Intelligent UI
+
+---
+
+## Phase 6 — Landscape + Capstone
+
+### AI Landscape
+
+### Model Economics
+
+### HCI + Research Areas
+
+### Robotics + Embodied AI
+
+### Social Computing
+
+### Extended Reality
+
+### Mobile + Ubiquitous Computing
+
+### Research Program Management
+
+### Capstone
