@@ -119,6 +119,7 @@ Deliverables:
 | Extended reality (XR) | `extended-reality` | not started |
 | Mobile + ubiquitous computing | `mobile-ubiquitous` | not started |
 | Research program management | `research-program-management` | not started |
+| AI PM interview prep | `ai-pm-interviews` | not started |
 | Capstone | `capstone` | not started |
 
 ---

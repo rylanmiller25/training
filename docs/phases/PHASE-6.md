@@ -12,9 +12,10 @@
 7. `extended-reality` — VR, AR, MR, and spatial computing
 8. `mobile-ubiquitous` — mobile design and the vision of computing everywhere
 9. `research-program-management` — managing AI research programs at labs like DeepMind
-10. `capstone` — portfolio, demos, and interview prep
+10. `ai-pm-interviews` — the five AI PM interview round types, with practice exercises for each
+11. `capstone` — portfolio, demos, and interview prep
 
-Modules 1–9 can be done in any order, though `ai-product-strategy` is best after `ai-landscape` and `model-economics`, and `research-program-management` is best after `hci-research`. The capstone should be last.
+Modules 1–9 can be done in any order, though `ai-product-strategy` is best after `ai-landscape` and `model-economics`, and `research-program-management` is best after `hci-research`. Do `ai-pm-interviews` after Phase 5 is complete and before the capstone. The capstone should be last.
 
 ---
 
@@ -119,6 +120,23 @@ Key things to internalize:
 - Managing researchers requires earning technical credibility — the "Technical" in TPM is not decorative
 - Safety evaluation is a coordination problem as much as a technical one
 
+### ai-pm-interviews
+**Do this after Phase 5 is complete and before the capstone. Don't rush it.**
+
+This module has a lot of active practice — behavioral stories, product sense answers, a system design session, and three timed vibe coding runs. Budget about 10 hours across multiple sessions.
+
+1. Read the module top to bottom first, then come back to exercises in order.
+2. Exercise Set 1 (behavioral stories) — write all five before you record yourself. The first recording is always worse than you expect. Revise and re-record at least once.
+3. Exercise Set 2 (product sense) — write the answer first. Then say it out loud. The written version and spoken version diverge; you want to be practiced at the spoken version.
+4. Exercise Set 3 (metrics exercise) — trace both paths fully before checking yourself against the metric pyramid. Most people stay at one layer; force yourself to go all three.
+5. Exercise Set 4 (system design) — draw the architectures before reading the templates. Then check your drawings against the templates. Where did you miss things?
+6. Exercise Set 5 (vibe coding) — strict 45-minute timer for each. No extensions. If you run out of time, write the post-mortem on what you'd do differently.
+
+Key things to internalize:
+- AI STAR stories must include the evaluation loop, the uncertainty, and the ML/research collaboration — not just the shipping story
+- AI product sense is incomplete without the failure path and trust arc
+- AI system design answers that don't address safety/guardrails are missing a whole category
+
 ### capstone
 **Last. Do this after all other Phase 6 modules and after most of Phase 5.**
 
@@ -160,6 +178,11 @@ The capstone is not a module you "complete" — it's where everything lands.
 - [ ] `docs/reading/XR-INTERACTION-DESIGN.md` committed
 - [ ] `docs/reading/CONTEXT-AUDIT.md` committed
 - [ ] `docs/reading/NOTIFICATION-DESIGN.md` committed
+- [ ] `docs/projects/AI-PM-BEHAVIORAL-STORIES.md` committed
+- [ ] `docs/projects/PRODUCT-SENSE-EXERCISES.md` committed
+- [ ] `docs/projects/METRICS-EXERCISE.md` committed
+- [ ] `docs/projects/AI-SYSTEM-DESIGN-PRACTICE.md` committed
+- [ ] `docs/projects/VIBE-CODING-EXERCISES.md` committed
 - [ ] `docs/reading/AI-LAB-ORG-MAP.md` committed
 - [ ] `docs/reading/RESEARCH-PROGRAM-MILESTONES.md` committed
 - [ ] `docs/reading/RESEARCH-BRIEF-EXERCISE.md` committed
