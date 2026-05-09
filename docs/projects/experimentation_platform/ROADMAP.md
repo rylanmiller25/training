@@ -21,8 +21,9 @@ Not every module produces a platform artifact — only the ones listed below are
 | Module | Platform artifact | What to produce |
 |---|---|---|
 | `http-apis` | `docs/projects/experimentation_platform/API-DESIGN.md` | Design the core platform APIs: experiment assignment endpoint, event ingestion endpoint, results query endpoint. Define request/response shapes. |
-| `sql` | `docs/projects/experimentation_platform/DATA-MODEL.md` | Design the database schema: experiments, variants, assignments, events, users, outcomes tables. Think through indexes and query patterns. |
 | `postman` | `docs/projects/experimentation_platform/API-COLLECTION.md` | Document a Postman collection for testing the platform API (even if the server isn't built yet — spec-first). |
+| `sql` | `docs/projects/experimentation_platform/DATA-MODEL.md` | Design the database schema: experiments, variants, assignments, events, users, outcomes tables. Think through indexes and query patterns. |
+| `experimentation` | `docs/projects/experimentation_platform/EXPERIMENT-METHODOLOGY.md` | The statistical specification for the platform: how you compute ATEs and confidence intervals, how you handle multiple comparisons in HTE analysis, when and how you apply CUPED, how SRM is detected, and what statistical decisions are made by default vs. exposed to the user. Every statistical design choice in the platform should trace back to this document. |
 
 ---
 
@@ -99,3 +100,4 @@ The following modules build foundational knowledge that informs the platform but
 - `social-computing`, `extended-reality`, `mobile-ubiquitous` — research/survey modules; inform your thinking about platform design but don't produce a platform artifact directly
 - `program-management`, `technical-communication` — TPM skills; inform how you run and communicate the platform program but produce reading artifacts, not platform-specific docs
 - `research-program-management` — synthesis TPM module; applies to how you'd operate the platform at an AI lab but produces reading artifacts, not platform-specific docs
+- `ai-pm-interviews` — interview prep; produces practice artifacts in `docs/projects/`, not platform-specific docs
