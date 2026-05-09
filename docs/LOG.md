@@ -151,6 +151,31 @@ You can also use LIMIT to specify the number of rows to return, and OFFSET to in
     ORDER BY column ASC/DESC
     LIMIT num_limit OFFSET num_offset;
 
+Often, data is split among many tables in a process called normalization to avoid duplication and allow tables to grow independently. These tables can be merged through JOIN commands.
+
+INNER JOIN merges the current table with another table on the basis of a shared variable, merging the columns from the second table into the first, only where the values of the shared variable line up 1-to-1 (in a basic INNER JOIN).
+
+LEFT JOIN, RIGHT JOIN, and FULL JOIN are used when data from two tables is asymmetric.
+
+A LEFT JOIN merges table A and table B, keeping rows for table A even if they don't have matches from table B. 
+
+A RIGHT JOIN merges table A and table B, keeping rows for table B even if they don't have matches from table A.
+
+A FULL JOIN simply means that rows from both tables are kept, regardless of whether a matching row exists in the other table.
+
+If you plan on merging two tables and want to keep specific columns from both, you list the columns in the SELECT command despite the merge command coming later.
+
+You can use WHERE column IS/IS NOT NULL to test for null values in a given column.
+
+You can use mathematical expressions to transform variables easily:
+    SELECT particle_speed / 2.0 AS half_particle_speed
+    FROM physics_data
+    WHERE ABS(particle_position) * 10.0 > 500;
+
+If doing so, it is best to label a description for an expression using the AS operator:
+    SELECT col_expression AS expr_description, …
+    FROM mytable;
+
 
 
 ### Experimentation + A/B Testing
@@ -172,6 +197,8 @@ You can also use LIMIT to specify the number of rows to return, and OFFSET to in
 ### n8n
 
 ### Advanced SQL + Analytics Engineering
+
+### Product Analytics + Data Instrumentation
 
 ---
 
@@ -262,6 +289,8 @@ You can also use LIMIT to specify the number of rows to return, and OFFSET to in
 ### Mobile + Ubiquitous Computing
 
 ### Research Program Management
+
+### Web Development for AI Products
 
 ### AI PM Interviews
 

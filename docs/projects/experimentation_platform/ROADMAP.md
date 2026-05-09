@@ -37,6 +37,7 @@ Not every module produces a platform artifact — only the ones listed below are
 | `cicd` | `src/.github/workflows/` | CI/CD pipeline: lint, type-check, test on PR; deploy on merge to main. |
 | `security` | `docs/projects/experimentation_platform/SECURITY-MODEL.md` | Security design: API auth, tenant isolation (one company's experiment data can't leak to another), data retention policy, PII handling in event logs. |
 | `n8n` | `docs/projects/experimentation_platform/N8N-WORKFLOWS.md` | Design n8n workflows for: alerting when experiment reaches significance, routing low-quality results to review queue, daily metrics digest. |
+| `product-analytics` | `docs/projects/experimentation_platform/ANALYTICS-PLAN.md` | Full event tracking specification: every event in the experiment lifecycle (setup, launch, result viewed, interpretation engaged, etc.), every property, every trigger. This drives what gets instrumented in the capstone build — every platform feature should fire the relevant events from day one. |
 
 ---
 
@@ -100,4 +101,5 @@ The following modules build foundational knowledge that informs the platform but
 - `social-computing`, `extended-reality`, `mobile-ubiquitous` — research/survey modules; inform your thinking about platform design but don't produce a platform artifact directly
 - `program-management`, `technical-communication` — TPM skills; inform how you run and communicate the platform program but produce reading artifacts, not platform-specific docs
 - `research-program-management` — synthesis TPM module; applies to how you'd operate the platform at an AI lab but produces reading artifacts, not platform-specific docs
+- `web-development` — produces the personal website brief and build artifacts in `src/website/` and `docs/projects/`; not platform-specific docs
 - `ai-pm-interviews` — interview prep; produces practice artifacts in `docs/projects/`, not platform-specific docs

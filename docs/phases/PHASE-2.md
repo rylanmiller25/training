@@ -10,6 +10,7 @@
 5. `security` — how to not get owned
 6. `n8n` — workflow automation; event-driven glue between systems
 7. `advanced-sql` — analytics SQL, query optimization, and experiment analysis queries
+8. `product-analytics` — instrumentation, event schema design, and the data flywheel
 
 The first three have a loose dependency (docker → cloud → cicd is a natural order). System design, security, n8n, and advanced-sql are independent and can be done in any position — advanced-sql only requires the Phase 1 sql module as a prerequisite.
 
@@ -129,10 +130,29 @@ Key things to internalize:
 - The cohort retention pattern — you'll use this constantly in product analytics
 - JSONB and why it matters for flexible event schemas
 
+### product-analytics
+**Do after advanced-sql — the analysis layer builds on the instrumentation layer.**
+
+Instrumentation has to be designed before you build the product, not after. The event schema you define here feeds directly into the capstone — every feature you build should fire the relevant events from day one.
+
+1. Read the PostHog documentation's "Event tracking" section before doing exercises. Understand the `capture`, `identify`, and `group` calls.
+2. Read the Segment Tracking Plan guide — even if you don't use Segment, the methodology for designing a tracking plan before writing tracking code is exactly right.
+3. Exercise Set 1 (setup) — get PostHog running. Even if self-hosting isn't practical yet, use the cloud free tier. You need to see events flowing before the schema design makes sense.
+4. Exercise Set 2 (tracking plan) — this is the main artifact. Don't write it too quickly. Think through every step of the experiment lifecycle from a user's perspective before you define events.
+5. Exercise Set 3 (event schema design) — the simulation feature exercise forces you to design from scratch rather than use a template.
+6. Exercise Set 4 (dashboard design) — design the dashboards before you have data. Knowing what you'll want to measure shapes what you instrument.
+
+Key things to internalize:
+- The event schema is a design decision, not an engineering afterthought — get it right before shipping
+- Anonymous → identified stitching and why it matters for pre-signup funnel analysis
+- The data flywheel: usage data → better AI interpretation → more engagement → more usage data
+
+> **→ Platform artifact:** Produce `docs/projects/experimentation_platform/ANALYTICS-PLAN.md`. The full event tracking specification: every event, every property, every trigger. This document drives what gets instrumented in the capstone build. Open [ROADMAP.md](../projects/experimentation_platform/ROADMAP.md) for what to include.
+
 ---
 
 ## Phase 2 is complete when:
-- [ ] All seven modules marked `complete` in the curriculum map
+- [ ] All eight modules marked `complete` in the curriculum map
 - [ ] `docs/projects/docker-hello/` committed with Dockerfile + docker-compose.yml
 - [ ] `.github/workflows/ci.yml` committed and running in GitHub Actions
 - [ ] `docs/projects/utils/math.ts` + `math.test.ts` committed
@@ -154,5 +174,6 @@ Key things to internalize:
 - [ ] `docs/projects/experimentation_platform/SYSTEM-DESIGN.md` (from `system-design`)
 - [ ] `docs/projects/experimentation_platform/SECURITY-MODEL.md` (from `security`)
 - [ ] `docs/projects/experimentation_platform/N8N-WORKFLOWS.md` (from `n8n`)
+- [ ] `docs/projects/experimentation_platform/ANALYTICS-PLAN.md` (from `product-analytics`)
 
 **Next:** Open `docs/phases/PHASE-3.md` and `docs/phases/PHASE-4.md` — these can run in parallel.

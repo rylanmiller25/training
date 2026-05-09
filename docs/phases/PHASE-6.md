@@ -12,10 +12,11 @@
 7. `extended-reality` — VR, AR, MR, and spatial computing
 8. `mobile-ubiquitous` — mobile design and the vision of computing everywhere
 9. `research-program-management` — managing AI research programs at labs like DeepMind
-10. `ai-pm-interviews` — the five AI PM interview round types, with practice exercises for each
-11. `capstone` — portfolio, demos, and interview prep
+10. `web-development` — design literacy and agent-direction skills for building your site
+11. `ai-pm-interviews` — the five AI PM interview round types, with practice exercises for each
+12. `capstone` — portfolio, demos, and interview prep
 
-Modules 1–9 can be done in any order, though `ai-product-strategy` is best after `ai-landscape` and `model-economics`, and `research-program-management` is best after `hci-research`. Do `ai-pm-interviews` after Phase 5 is complete and before the capstone. The capstone should be last.
+Modules 1–9 can be done in any order, though `ai-product-strategy` is best after `ai-landscape` and `model-economics`, and `research-program-management` is best after `hci-research`. Do `web-development` and `ai-pm-interviews` after Phase 5 is complete. The capstone should be last.
 
 ---
 
@@ -119,6 +120,22 @@ Key things to internalize:
 - Research milestones use exploration gates, not delivery milestones
 - Managing researchers requires earning technical credibility — the "Technical" in TPM is not decorative
 - Safety evaluation is a coordination problem as much as a technical one
+
+### web-development
+**Do this before the capstone — it directly prepares you to brief Claude Code to build the site.**
+
+This module is not about learning to code. It's about developing enough design vocabulary and technical fluency to direct an agent effectively. The capstone requires a live personal website; this module ensures you know what "good" looks like and how to specify it.
+
+1. Exercise Set 1 (design audit) — do this before reading the rest of the module. Your unprimed reaction to three AI product sites tells you a lot about your current design intuition.
+2. Read the "Modern AI product aesthetic" and "How to write an effective brief" sections carefully. These are the most practically important parts.
+3. Exercise Set 2 (site brief) — this is the most important exercise. Spend real time on it. The brief you write here is what you hand to Claude Code in Exercise Set 3.
+4. Exercise Set 3 (build the home page) — apply the AI prototyping discipline from `prompt-eng`. Log your prompts, log the feedback you give, track what improved and what didn't.
+5. Exercise Set 4 (responsive and accessible review) — run Lighthouse. Fix the issues. This is not optional; performance and accessibility are part of the product.
+
+Key things to internalize:
+- Specific design language for the AI product aesthetic — you should be able to describe what you want in terms an agent can execute
+- The feedback loop: vague feedback → vague improvements; specific feedback → specific improvements
+- Performance is a design constraint, not an afterthought
 
 ### ai-pm-interviews
 **Do this after Phase 5 is complete and before the capstone. Don't rush it.**

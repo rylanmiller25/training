@@ -46,6 +46,7 @@ Deliverables:
 | Security basics | `security` | not started |
 | n8n — workflow automation | `n8n` | not started |
 | Advanced SQL + analytics engineering | `advanced-sql` | not started |
+| Product analytics + data instrumentation | `product-analytics` | not started |
 
 **Unlocks:** Phase 3 (product craft) and Phase 4 (AI foundations both need this context)
 
@@ -119,6 +120,7 @@ Deliverables:
 | Extended reality (XR) | `extended-reality` | not started |
 | Mobile + ubiquitous computing | `mobile-ubiquitous` | not started |
 | Research program management | `research-program-management` | not started |
+| Web development for AI products | `web-development` | not started |
 | AI PM interview prep | `ai-pm-interviews` | not started |
 | Capstone | `capstone` | not started |
 
@@ -158,6 +160,7 @@ Every module that produces a platform artifact is listed here. The artifact is p
 | 2 | `system-design` | `docs/projects/experimentation_platform/SYSTEM-DESIGN.md` |
 | 2 | `security` | `docs/projects/experimentation_platform/SECURITY-MODEL.md` |
 | 2 | `n8n` | `docs/projects/experimentation_platform/N8N-WORKFLOWS.md` |
+| 2 | `product-analytics` | `docs/projects/experimentation_platform/ANALYTICS-PLAN.md` |
 | 3 | `prds` | `docs/projects/experimentation_platform/PRD.md` |
 | 3 | `unit-economics` | `docs/projects/experimentation_platform/UNIT-ECONOMICS.md` |
 | 3 | `privacy-compliance` | `docs/projects/experimentation_platform/PRIVACY-COMPLIANCE.md` |
