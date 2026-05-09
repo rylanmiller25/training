@@ -19,7 +19,7 @@ Deliverables:
 
 ## Phase 1: Engineering Fundamentals
 **Prereqs:** Phase 0  
-**Dependency order within phase:** CLI → Git → HTTP/APIs → SQL (SQL can run parallel to Git/HTTP)
+**Dependency order within phase:** CLI → Git → HTTP/APIs → SQL → Experimentation (SQL can run parallel to Git/HTTP; Experimentation requires SQL)
 
 | Module | Slug | Status |
 |--------|------|--------|
@@ -28,6 +28,7 @@ Deliverables:
 | HTTP + REST APIs | `http-apis` | not started |
 | Postman | `postman` | not started |
 | SQL | `sql` | not started |
+| Experimentation + A/B testing | `experimentation` | not started |
 
 **Unlocks:** Phase 2 (containers, cloud, CI/CD all need CLI + Git + APIs as prereqs)
 
