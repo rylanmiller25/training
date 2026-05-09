@@ -5,15 +5,16 @@
 **Modules:**
 1. `ai-landscape` — who's doing what and why
 2. `model-economics` — how the economics of AI work
-3. `hci-research` — the research areas at the intersection of AI and human experience
-4. `robotics` — embodied AI survey
-5. `social-computing` — collective intelligence, platforms, reputation systems
-6. `extended-reality` — VR, AR, MR, and spatial computing
-7. `mobile-ubiquitous` — mobile design and the vision of computing everywhere
-8. `research-program-management` — managing AI research programs at labs like DeepMind
-9. `capstone` — portfolio, demos, and interview prep
+3. `ai-product-strategy` — how to build defensible AI products, not just functional ones
+4. `hci-research` — the research areas at the intersection of AI and human experience
+5. `robotics` — embodied AI survey
+6. `social-computing` — collective intelligence, platforms, reputation systems
+7. `extended-reality` — VR, AR, MR, and spatial computing
+8. `mobile-ubiquitous` — mobile design and the vision of computing everywhere
+9. `research-program-management` — managing AI research programs at labs like DeepMind
+10. `capstone` — portfolio, demos, and interview prep
 
-Modules 1–8 can be done in any order, though `research-program-management` is best after `hci-research`. The capstone should be last.
+Modules 1–9 can be done in any order, though `ai-product-strategy` is best after `ai-landscape` and `model-economics`, and `research-program-management` is best after `hci-research`. The capstone should be last.
 
 ---
 
@@ -35,11 +36,25 @@ Modules 1–8 can be done in any order, though `research-program-management` is 
 
 1. Read the Epoch AI pricing trend data before doing exercises.
 2. Exercise Set 1 (pricing timeline) — track the price history. The rate of decline is often surprising.
-3. Exercise Set 2 (cost structure) — use the product category you care about most.
-4. Exercise Set 3 (Chinchilla scaling laws) — read the abstract and Figure 1 only. Don't get lost in the math.
-5. Exercise Set 4 (commoditization strategy) — pick a real company. Be specific about their moat.
+3. Exercise Set 2 (full cost stack) — map all 7 layers for the experimentation platform specifically. This is the most practically useful exercise.
+4. Exercise Set 3 (pricing model design) — design the platform's pricing model with real margin math.
+5. Exercise Set 4 (Chinchilla scaling laws) — read the abstract and Figure 1 only. Don't get lost in the math.
+6. Exercise Set 5 (commoditization strategy) — pick a real company. Be specific about their moat.
 
 > **→ Platform artifact:** Produce `docs/projects/experimentation_platform/ML-COST-MODEL.md`. Model the compute costs for running causal forests at scale — this directly impacts the platform's pricing. Open [ROADMAP.md](../projects/experimentation_platform/ROADMAP.md) for what to include.
+
+### ai-product-strategy
+**After model-economics — strategy without cost structure is just slide decks.**
+
+This module synthesizes everything. It's where the experimentation platform transitions from a technical project to a product with a position.
+
+1. Read the primary resources in the order listed — moats/margins, product strategy, PMF — before starting exercises.
+2. Exercise Set 1 (competitive position analysis) — write a genuine position, not a flattering one. Which competitors actually threaten this?
+3. Exercise Set 2 (moat stress test) — be brutally honest. Where is the platform not defensible?
+4. Exercise Set 3 (PMF audit) — the dual success metrics question (user performance + AI performance) is the most important. Answer it specifically.
+5. Exercise Set 4 (AI system stack analysis) — read the Everything About AI article, then apply each of the eight stack layers to the experimentation platform.
+
+> **→ Platform artifacts:** Produce `docs/reading/COMPETITIVE-POSITION.md`, `docs/reading/MOAT-STRESS-TEST.md`, `docs/reading/PMF-AUDIT.md`, and `docs/reading/AI-SYSTEM-STACK-ANALYSIS.md`. These feed directly into your capstone positioning.
 
 ### hci-research
 **Independent — do whenever you have the most energy for it.**

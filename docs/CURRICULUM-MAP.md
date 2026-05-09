@@ -111,6 +111,7 @@ Deliverables:
 |--------|------|--------|
 | AI product landscape + labs | `ai-landscape` | not started |
 | Model economics | `model-economics` | not started |
+| AI product strategy | `ai-product-strategy` | not started |
 | HCI + research areas | `hci-research` | not started |
 | Robotics + embodied AI | `robotics` | not started |
 | Social computing | `social-computing` | not started |

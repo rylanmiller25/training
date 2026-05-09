@@ -55,6 +55,48 @@ Model economics covers the cost structure of training and serving AI models, sca
 - Log-linear relationship: doubling compute gives predictable capability gains
 - Implies: labs can predict how much capability they'll get before training (to some extent)
 
+### The 7-layer AI cost stack
+
+When building an AI product, the model API line item is the visible cost. The true cost stack has seven layers, and products that only price based on the API layer routinely underprice and destroy margins.
+
+1. **Model cost:** input + output token charges from the API provider
+2. **Retrieval cost:** vector database queries, embedding generation, search infrastructure for RAG pipelines
+3. **Orchestration cost:** LangChain / LangGraph execution, tool call overhead, multi-agent coordination infrastructure
+4. **Latency cost:** the compute kept warm to hit SLA targets (cold starts are free; hot standby is not)
+5. **Failure and retry cost:** re-runs from model hallucinations, JSON parse failures, tool call errors — typically adds 10–30% to nominal API cost in production
+6. **Evaluation cost:** ongoing evals, human review, red-teaming, quality monitoring
+7. **Data infrastructure cost:** logging, tracing, prompt/output storage, feedback capture
+
+Most pricing models quote against layer 1 only. Real unit economics require summing all seven.
+
+**Implication for the experimentation platform:** The AI interpretation layer runs against every chart render. At scale, retrieval (context from prior experiments), failure/retry (JSON parse on interpretation outputs), and logging infrastructure may exceed the model token cost.
+
+### The 4 AI pricing models
+
+**Usage-based:** Price per API call, per query, or per active experiment. Aligns with how your costs scale. Easiest to model; hardest for customers to budget. Best when usage is bursty or unpredictable.
+
+**Hybrid (seat + usage):** Base platform fee per seat, plus overage charges beyond a usage threshold. Gives customers predictability; gives you a floor. The dominant model for B2B AI tools at Series A+.
+
+**Outcome-based:** Price on the value delivered, not on consumption. For the experimentation platform: charge per experiment that reaches statistical significance, or per insight that drives a measurable business decision. Highest perceived value; hardest to measure; requires deep instrumentation.
+
+**Capacity-based:** Flat fee for a committed capacity tier (e.g., up to 20 concurrent experiments, up to 10M events/month). Predictable for both sides; works when usage is fairly steady. Common in infrastructure-adjacent AI tools.
+
+**Pricing trap:** Don't price based on what feels fair — price based on cost structure. Variable costs in AI scale with usage; a fixed subscription on a usage-variable product is the fastest way to margin compression at scale.
+
+### Cost optimization techniques
+
+When AI unit economics are tight, four levers move the needle most:
+
+**Token diet:** Compress context ruthlessly. Summarize prior conversation turns instead of passing full history. Strip redundant instructions from system prompts. Use shorter model names and field labels in structured outputs. A 40% context reduction is often achievable without quality loss.
+
+**Context compression:** Use a small, cheap model to compress long context before passing to the primary model. E.g., use a 4B parameter model to summarize a 20K-token document to 500 tokens, then pass to the frontier model for reasoning. Saves 95%+ of input token cost on long-context tasks.
+
+**Model right-sizing (cascaded inference):** Route tasks by complexity. Simple tasks (classification, formatting, extraction) go to small fast cheap models. Complex tasks (multi-step reasoning, novel synthesis) go to frontier models. In practice, 60–80% of tasks in most products are simple enough for a small model.
+
+**Cascaded inference pattern:** Score each incoming request for complexity (or predicted output length) before routing. Routing logic itself adds ~$0.0001 per request — trivially offset by routing 70% of traffic to a model that's 20x cheaper.
+
+**For the experimentation platform:** HTE analysis and causal inference are complex — frontier model territory. Result interpretation at the chart level is simpler — good candidate for a smaller model. Pre-experiment power analysis (deterministic math wrapped in natural language) needs almost no model intelligence — cheapest possible model or no model at all.
+
 ### Pricing structure
 - API pricing: $ per million input tokens + $ per million output tokens
 - Output is 3–5x more expensive than input (generation is slower)
@@ -91,22 +133,30 @@ Research historical API pricing:
 - Plot the trend. What does this mean for AI product margins?
 Save to `docs/reading/MODEL-PRICING-TRENDS.md`.
 
-**Set 2 — Cost structure analysis (30 min):**
-For a hypothetical AI-first company (pick: coding assistant, customer support bot, document analysis tool):
-- What's the API cost per user per month at your pricing tier?
-- What gross margin can you achieve?
-- How does that margin change if API prices fall 50%?
-- At what scale does training your own model become cost-effective?
+**Set 2 — Full cost stack analysis (45 min):**
+Map the 7-layer cost stack for the experimentation platform:
+- For a user who runs 5 experiments per month with ~50K events each, estimate costs at each of the 7 layers
+- Where are the largest cost centers? Where are you most uncertain?
+- At what scale (number of paying customers) does each layer become significant?
+- How does a 50% model API price drop affect total unit economics?
 Save to `docs/reading/AI-COST-STRUCTURE.md`.
 
-**Set 3 — Scaling laws intuition (20 min):**
+**Set 3 — Pricing model design (30 min):**
+Design a pricing model for the experimentation platform:
+- Which of the 4 pricing models fits best, and why? (usage-based, hybrid, outcome-based, capacity-based)
+- What is the billable unit? Why that unit and not another?
+- At your chosen price point, what gross margin do you achieve at 50 / 500 / 5000 customers?
+- What happens to margins if you implement cascaded inference for the interpretation layer?
+Save to `docs/reading/PLATFORM-PRICING-MODEL.md`.
+
+**Set 4 — Scaling laws intuition (20 min):**
 Read just the abstract and Figure 1 of the Chinchilla paper (https://arxiv.org/abs/2203.15556).
 - What was the key finding?
 - What mistake were prior labs making?
 - What does "compute-optimal" mean?
 Save notes to `docs/reading/SCALING-LAWS-NOTES.md`.
 
-**Set 4 — Commoditization strategy (20 min):**
+**Set 5 — Commoditization strategy (20 min):**
 Choose one company building on AI APIs (Cursor, Jasper, Perplexity, etc.).
 - What is their moat as model APIs commoditize?
 - What would happen to them if their core model provider made a competing product?
@@ -118,6 +168,9 @@ Save to `docs/reading/COMMODITIZATION-STRATEGY.md`.
 ## Checks — you understand this when you can:
 - [ ] Explain why inference costs fall faster than training costs
 - [ ] Explain scaling laws (Chinchilla) in one paragraph
+- [ ] Name all 7 layers of the AI cost stack and explain why each matters
+- [ ] Explain the 4 AI pricing models and when each is appropriate
+- [ ] Explain token diet, context compression, and cascaded inference — and apply each to the experimentation platform
 - [ ] Predict the margin trajectory for a product built on API pricing
 - [ ] Explain 3 sources of defensibility as model capabilities commoditize
 - [ ] Explain when it makes economic sense to train vs use APIs
@@ -127,7 +180,8 @@ Save to `docs/reading/COMMODITIZATION-STRATEGY.md`.
 ## Artifacts to commit
 - [ ] `docs/reading/MODEL-PRICING-TRENDS.md`
 - [ ] `docs/reading/AI-COST-STRUCTURE.md`
+- [ ] `docs/reading/PLATFORM-PRICING-MODEL.md`
 - [ ] `docs/reading/SCALING-LAWS-NOTES.md`
 - [ ] `docs/reading/COMMODITIZATION-STRATEGY.md`
-- [ ] Glossary entries: scaling laws, Chinchilla, compute-optimal, inference cost, training cost, commoditization
+- [ ] Glossary entries: scaling laws, Chinchilla, compute-optimal, inference cost, training cost, commoditization, token diet, cascaded inference, context compression, usage-based pricing, outcome-based pricing
 - [ ] Log entry in `docs/LOG.md`

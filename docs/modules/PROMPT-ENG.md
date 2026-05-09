@@ -120,6 +120,26 @@ Build a prompt that:
 4. Handle edge cases: missing fields should be null, not omitted
 Save prompt + TypeScript validation code to `docs/projects/structured-output-pipeline/`.
 
+**Set 5 — AI prototyping discipline (45 min):**
+
+The biggest mistake in AI product development is treating the prototype as a throwaway. Production systems are built on the prompt infrastructure you write today — the earlier you apply production discipline, the less you rewire later.
+
+For each prototype you build in this curriculum, apply the following before writing the first prompt:
+
+1. **Define success criteria explicitly.** What does "working" mean? Write it down as a measurable condition: "The interpretation correctly identifies the highest-effect subgroup in 9/10 test cases." Vague success criteria ("it should sound good") ensure you never know if it's ready.
+
+2. **Set a decision gate.** When do you stop iterating? "If I can't hit 80% accuracy on my 10-case eval set within 4 hours, the approach is wrong and I'll try a different strategy." Without a gate, you iterate indefinitely.
+
+3. **Log production-style from session 1.** Save every prompt version, input, output, and your pass/fail judgment to a file. Structure: `{version, prompt_hash, input, output, passed: boolean, notes}`. You can't improve what you can't measure.
+
+4. **Measure cost per call.** Log input and output tokens for every run. Know what the feature costs per user per day before you're surprised at scale.
+
+5. **Handle graceful failures explicitly.** Before shipping any prompt, write the failure handler: what happens when the model returns malformed JSON? When it refuses the task? When it hallucinates a subgroup that doesn't exist? Failure handling is not optional; it's part of the prompt system.
+
+**Exercise:** Build the AI interpretation prompt for the experimentation platform's HTE output. Apply all five disciplines above. The prompt should take: a treatment effect estimate, confidence interval, subgroup name, and sample size — and return a plain-language interpretation calibrated to reliability.
+
+Define your success criteria first (write them down). Run 10 test cases. Log all outputs. Measure token cost. Write the failure handler. Save to `docs/projects/AI-INTERPRETATION-PROMPT.md`.
+
 ---
 
 ## Checks — you understand this when you can:
@@ -129,6 +149,8 @@ Save prompt + TypeScript validation code to `docs/projects/structured-output-pip
 - [ ] Build a prompt that reliably returns structured JSON
 - [ ] Explain why prompts should be version-controlled and tested
 - [ ] Identify 3 common prompt bugs and how to fix them
+- [ ] Write explicit success criteria and a decision gate before starting a prompt prototype
+- [ ] Log cost per call and build a graceful failure handler for a production prompt
 
 ---
 
@@ -137,5 +159,6 @@ Save prompt + TypeScript validation code to `docs/projects/structured-output-pip
 - [ ] `docs/projects/FEW-SHOT-CLASSIFIER.md`
 - [ ] `docs/reading/COT-EXPERIMENT.md`
 - [ ] `docs/projects/structured-output-pipeline/`
-- [ ] Glossary entries: few-shot, zero-shot, chain-of-thought, system prompt, structured output, constitutional prompting
+- [ ] `docs/projects/AI-INTERPRETATION-PROMPT.md`
+- [ ] Glossary entries: few-shot, zero-shot, chain-of-thought, system prompt, structured output, constitutional prompting, decision gate
 - [ ] Log entry in `docs/LOG.md`
