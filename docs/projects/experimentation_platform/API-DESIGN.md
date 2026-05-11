@@ -248,7 +248,8 @@ POST /simulate
     }
   },
   "recommendation": "run_as_designed",
-  "recommendationExplanation": "Your overall result will be reliable in about 12 days. The technical founder subgroup is well-powered. The non-technical founder subgroup is marginal — consider running 2 extra weeks if this comparison matters."
+  "recommendationExplanation": "Your overall result will be reliable in about 12 days. The technical founder subgroup is well-powered. The non-technical founder subgroup is marginal — consider running 2 extra weeks if this comparison matters.",
+  "varianceReductionNote": "Estimate accounts for variance reduction using your users' prior event history (estimated 30% reduction). If your users have limited history, actual time-to-result may be longer."
 }
 ```
 
@@ -269,6 +270,11 @@ GET /experiments/{experimentId}/results
   "status": "running",
   "sampleSize": { "control": 842, "treatment": 856 },
   "srmDetected": false,
+  "varianceReduction": {
+    "applied": true,
+    "estimatedReductionPct": 0.34,
+    "estimatedDaysSaved": 8
+  },
   "ate": {
     "estimate": 0.034,
     "confidenceInterval": [0.011, 0.057],

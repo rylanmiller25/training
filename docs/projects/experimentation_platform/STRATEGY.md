@@ -14,13 +14,23 @@ The third insight: statistical sophistication and ease of use are not in tension
 
 ## Target market
 
-Early-stage and growth-stage startups running experiments at the intersection of product and market:
+Startups and growth-stage firms running experiments at the intersection of product and market:
 - Pricing experiments (does $49 vs $99 affect conversion and churn differently by user type?)
 - Go-to-market experiments (does this positioning message work for SMB vs enterprise?)
 - Onboarding experiments (which user profiles respond to which flows?)
 - Retention experiments (which intervention prevents churn for which cohort?)
 
 The platform is not primarily for UX A/B testing (button color, copy tweaks) — that space is crowded. It's for experiments where the *market signal* matters as much as the product signal.
+
+### ICP by phase
+
+**Phase 1 ICP — seed through Series B, any vertical, no dedicated data science team.**
+The defining characteristic is not company size but the absence of a data team. A Series B e-commerce company, a consumer app, a marketplace — if they don't have a statistician on staff and want rigorous experiment results they can act on without hiring one, Panel is for them. The natural language setup and opinionated defaults are the primary value driver at this stage.
+
+**Phase 2 ICP — Series C+ and mid-market, growing up-market with customers.**
+As Panel matures, add raw data export, richer API access, and controls for technical buyers (data teams, growth engineers). This allows Panel to grow with its customers rather than losing them to Statsig or Optimizely as they scale. The key design constraint: advanced features must be available without becoming the default. Opinionated defaults stay the entry point; escape hatches exist for the technical buyer. Larger customers should not pull the product away from what makes it distinctive.
+
+> **PRD note:** The Phase 1 ICP should define scope, user stories, and success metrics for the MVP PRD. Phase 2 ICP expansion — specifically what features are needed and when — should be captured in the PRD's out-of-scope / future section.
 
 ---
 

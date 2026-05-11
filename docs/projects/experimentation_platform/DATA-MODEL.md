@@ -11,7 +11,8 @@
 - **Runs are discrete:** An experiment can be run multiple times. Each run has its own assignments, events, and computed results. Timestamps make it possible to filter by run or combine across runs.
 - **Users are lightweight:** Panel stores a user record per project — just an ID and any known attributes — not a full user account. These are the customer's end users, not Panel accounts.
 - **Events are hybrid-schema:** Fixed columns for fields Panel always queries (user, event name, timestamp). A JSONB `properties` column for customer-specific fields that vary by event type.
-- **Results are stored, not computed live:** Results are computed at the end of a run (or on demand) and written to the database with a timestamp. Filtering by run or timestamp lets customers analyze one run or combine across runs.
+- **Results are on-demand, not automatic:** Results are computed when a customer requests them and written to the database with a timestamp. The UI shows when results were last computed and lets customers trigger a refresh. Filtering by run or timestamp lets customers analyze one run or combine across runs.
+- **Pre-experiment history enables automatic variance reduction:** The `events` table retains all user behavior before an experiment launches. When sufficient history exists, Panel applies CUPED automatically to reduce metric variance — shortening time to reliable results without any customer configuration. When history is insufficient (e.g. new users, first-touch onboarding), Panel falls back to standard analysis gracefully.
 
 ---
 
@@ -58,7 +59,7 @@ The experiment definition — what is being tested, how, and with what configura
 | `outcome_metric` | `text` | The event name being measured (e.g. `upgrade_to_paid`) |
 | `outcome_window_seconds` | `int` | How long after assignment an outcome counts |
 | `subgroups` | `text[]` | Pre-specified subgroup attribute names (e.g. `["founder_type", "plan_tier"]`) |
-| `config` | `jsonb` | Statistical config: significance threshold, target power, MDE |
+| `config` | `jsonb` | Statistical config: significance threshold, target power, MDE, and guardrail thresholds (churn, engagement, revenue per user). Defaults provided by Panel; customer-adjustable before launch, locked once running. |
 | `status` | `text` | `draft`, `running`, `paused`, `complete` |
 | `created_at` | `timestamptz` | |
 | `updated_at` | `timestamptz` | |
@@ -152,7 +153,7 @@ Records outcome events tracked by the customer's product via `POST /events`. One
 
 ### `results`
 
-Stores computed experiment results. Written at the end of a run or when a customer requests a recomputation. One row per run per result type.
+Stores computed experiment results. Written when a customer requests a computation or refresh. One row per run per result type.
 
 | Column | Type | Notes |
 |---|---|---|
@@ -164,6 +165,8 @@ Stores computed experiment results. Written at the end of a run or when a custom
 | `computed_at` | `timestamptz` | When this result was calculated |
 | `sample_size` | `jsonb` | `{ "control": 842, "treatment": 856 }` |
 | `srm_detected` | `boolean` | Whether a sample ratio mismatch was detected |
+| `cuped_applied` | `boolean` | Whether CUPED variance reduction was applied to this result |
+| `cuped_variance_reduction_pct` | `float` | Estimated variance reduction achieved (null if CUPED not applied) |
 | `payload` | `jsonb` | The full result: ATE estimate, confidence interval, p-value, subgroup breakdowns, etc. |
 | `interpretation` | `text` | AI-generated plain-English interpretation of this result |
 
