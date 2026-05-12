@@ -176,7 +176,108 @@ Thresholds are stored in the `config` jsonb column on the `experiments` table al
 
 ---
 
-## 10. Statistical decisions — default vs. configurable
+## 10. Untestable outcome detection
+
+The natural language parsing layer evaluates the customer's stated outcome before creating an experiment. If the outcome is not testable with Panel's infrastructure, the platform returns a clear explanation rather than configuring an experiment that will produce meaningless results.
+
+**Conditions that make an outcome untestable:**
+
+| Condition | Example | Response |
+|---|---|---|
+| Not expressible as a trackable event | "Does our brand feel more premium?" | Flag as untestable — brand perception can't be measured from user behavior. Suggest a proxy event or a survey tool instead. |
+| Outcome window too long to be practical | "Does this affect 3-year LTV?" | Flag as infeasible — surface estimated experiment duration and recommend a shorter-window proxy metric. |
+| SUTVA violation | Marketplace matching, referral programs, social features | Flag that standard randomization breaks down. Recommend a switchback or geo experiment design instead. |
+| Outcome event too rare to be powered | Event occurs < 1 in 1,000 users | Pre-experiment simulation returns `reliable: false` with an explanation that no realistic traffic level will reach significance. Recommend a higher-frequency proxy. |
+| Treatment cannot be randomized | Company-wide price change, uniform policy | Flag that individual-level randomization is not possible. Recommend synthetic control or difference-in-differences instead. |
+
+**Where this runs:** The `POST /experiments/parse` endpoint evaluates testability as part of intent parsing. If an outcome is untestable, the response sets `clarificationNeeded: true` with a specific explanation rather than returning a parsed experiment config. No experiment is created until the customer resolves the issue.
+
+---
+
+## 11. Experiment-type-aware guardrail selection
+
+The three default guardrail metrics (churn rate, engagement rate, revenue per user) are calibrated for a mature product experiment where users are already paying customers with behavioral history. They do not universally apply.
+
+Panel infers appropriate guardrails from the experiment type declared at setup and suppresses defaults that are not meaningful in context.
+
+**Guardrail applicability by experiment type:**
+
+| Experiment type | Churn rate | Engagement rate | Revenue per user | Alternative guardrails |
+|---|---|---|---|---|
+| Pricing sensitivity | ✓ | ✓ | ✓ | — |
+| Top-of-funnel / signup flow | ✗ Not yet customers | ✗ Day-1 users only | ✗ No payment yet | Signup completion rate, time to first action |
+| Onboarding flow | ✗ | Conditional | ✗ | Feature adoption rate, time to value |
+| Cancellation flow | ✗ Churn is primary metric | ✓ | ✓ | Reactivation rate |
+| Positioning / messaging | ✗ | ✓ | Conditional | Click-through rate, demo request rate |
+| Retention intervention | ✓ | ✓ | ✓ | — |
+
+**Rules:**
+- If churn rate is the primary metric, it is removed from guardrails automatically.
+- If the experiment targets pre-conversion users (no payment history), revenue per user and churn rate are suppressed.
+- If the experiment window is shorter than 30 days and the outcome is top-of-funnel, engagement rate is replaced with a session-based proxy.
+- Customers can add custom guardrail metrics at setup — any event Panel tracks can serve as a guardrail with a customer-specified threshold.
+
+**Where this runs:** Guardrail selection happens at experiment creation (`POST /experiments`). The platform proposes a guardrail set based on experiment type and surfaces it on the confirmation screen with plain-English explanations. Customers approve or adjust before launch.
+
+---
+
+## 12. Minimum experiment duration
+
+**Hard minimum:** 7 days, regardless of when statistical significance is reached.
+
+**Dynamic minimum:** `max(7 days, simulation-estimated days to minimum sample size)`
+
+The 7-day floor exists because novelty and primacy effects typically take 5–7 days to wash out. A customer with high traffic might reach significance in 2 days — but that result reflects novelty, not a stable treatment effect. The simulation-based component catches the opposite case: low-traffic customers who need far longer than 7 days to accumulate enough users.
+
+**Enforcement:** Panel surfaces the minimum run time on the pre-launch confirmation screen and does not allow the experiment to be stopped early for significance before the minimum is reached. Guardrail-triggered stops are exempt — a guardrail crossing is grounds for immediate stop regardless of duration.
+
+---
+
+## 13. Overlapping experiments
+
+Panel follows a simplified version of Microsoft's layer-based experiment infrastructure.
+
+**The principle:** Experiments in independent layers can run simultaneously without contamination, as long as they don't interact. Experiments that touch the same product surface or share an outcome metric may interact and should not overlap.
+
+**Panel's MVP implementation:**
+- Each experiment runs in its own namespace, independently randomizing users via hash
+- When a customer launches a new experiment, Panel checks whether any currently running experiments share overlapping user populations AND overlapping outcome metrics
+- If overlap is detected, Panel flags it on the launch screen: "This experiment may interact with [Experiment X] — consider sequencing them or making them mutually exclusive"
+- The customer can proceed or pause the conflicting experiment
+
+**Full layer infrastructure** (post-MVP): Explicit experiment layers where experiments in the same layer are mutually exclusive. A user can be in at most one experiment per layer, and in one experiment per each independent layer simultaneously. This is how Microsoft and Google handle high-volume overlapping experimentation.
+
+---
+
+## 14. CUPED covariate imputation
+
+There is no hard exclusion threshold for pre-experiment history. Instead, Panel uses mean imputation for missing covariates.
+
+**Why no threshold is needed:** If a user has no pre-experiment history, their covariates are set to the covariate mean. This means their predicted value `Ŷ = mean(Ŷ)`, and their CUPED adjustment is exactly zero — `Y_cuped = Y - (mean(Ŷ) - mean(Ŷ)) = Y`. Users with no history automatically receive no adjustment without any special handling logic. Even partial history contributes some variance reduction.
+
+**Reporting:** Panel reports `cuped_applied: true` when more than 50% of assigned users had real (non-imputed) covariate data. Below that threshold, `cuped_applied: false` and the result is treated as unadjusted for reporting purposes, even though partial adjustment occurred.
+
+---
+
+## 15. SRM resolution and billing
+
+**When SRM is detected:** Data collected during the SRM period is discarded. A new run is created. The customer is notified with a plain-English explanation of what SRM means and what likely caused it.
+
+**Root cause diagnosis:** Panel distinguishes two SRM types:
+- **Assignment-side SRM:** Panel's own assignment logs show the wrong split. Indicates a Panel infrastructure issue or hashing bug. Panel is responsible.
+- **Event-side SRM:** Panel's assignment logs show the correct split, but the customer's event pipeline shows imbalance. Indicates a customer SDK issue — a logging bug, redirect problem, or client-side filtering on one variant only.
+
+Panel surfaces the diagnosis to the customer with specific guidance on where to investigate.
+
+**Subscription credit policy:**
+Panel uses a subscription pricing model (free, pro, enterprise tiers) — there is no per-experiment or per-run billing. SRM policy is therefore about service quality and trust, not charge disputes:
+- SRM detected and root cause is Panel-side (assignment logs show wrong split) → Panel provides priority support, root cause report, and a subscription credit proportional to the affected period
+- SRM detected and root cause is customer-side (assignment logs correct, event pipeline imbalanced) → Panel provides diagnosis and guidance; no credit issued
+- SRM detected within 48 hours of launch → treated as a setup error regardless of fault; Panel provides a free diagnostic session to help resolve it
+
+---
+
+## 16. Statistical decisions — default vs. configurable
 
 | Decision | Default | Customer-configurable |
 |---|---|---|

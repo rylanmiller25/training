@@ -40,7 +40,7 @@ A Panel customer account. One organization can have multiple projects.
 |---|---|---|
 | `id` | `uuid` | Primary key |
 | `name` | `text` | Company name |
-| `plan` | `text` | `free`, `starter`, `pro`, `enterprise` |
+| `plan` | `text` | `free`, `pro`, `enterprise` |
 | `created_at` | `timestamptz` | |
 
 ---

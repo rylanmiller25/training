@@ -2,7 +2,7 @@
 
 **Phase:** 1  
 **Slug:** `sql`  
-**Status:** not started  
+**Status:** Started 
 
 ---
 

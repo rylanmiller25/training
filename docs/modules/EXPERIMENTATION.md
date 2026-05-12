@@ -2,7 +2,7 @@
 
 **Phase:** 1  
 **Slug:** `experimentation`  
-**Status:** not started  
+**Status:** Started 
 
 ---
 
@@ -31,7 +31,7 @@ This module is foundational to everything in the experimentation platform. Every
 **Supporting:**
 - [Netflix Tech Blog — Interleaving in Online Experiments](https://netflixtechblog.com/interleaving-in-online-experiments-at-netflix-a04ee392ec55) — one of the best walkthroughs of a sophisticated design
 - [Statsig Blog — SRM Detection](https://www.statsig.com/blog/sample-ratio-mismatch) — practical SRM explanation
-- [Spotify Engineering — CUPED](https://engineering.atspotify.com/2023/09/using-cuped-to-improve-statistical-power-in-online-experiments/) — good applied CUPED walkthrough
+- [Spotify Confidence — Variance Reduction (CUPED)](https://confidence.spotify.com/docs/experiments/stats/variance-reduction) — good applied CUPED walkthrough
 
 ---
 
@@ -218,25 +218,25 @@ Save to `docs/reading/ADVANCED-DESIGN-SELECTION.md`.
 ---
 
 ## Checks — you understand this when you can:
-- [ ] Explain the difference between a primary metric, guardrail metric, and counter-metric — and give examples for the experimentation platform
-- [ ] Explain what randomization unit means and what goes wrong if you pick the wrong one
-- [ ] Calculate (roughly) the required sample size for a given MDE, variance, and power target
-- [ ] Explain what SRM is, how to detect it, and what it means for results validity
-- [ ] Explain peeking / optional stopping and why it inflates false positive rates
-- [ ] Explain the delta method and when it's needed
-- [ ] Explain the multiple comparisons problem and two ways to address it
-- [ ] Explain CUPED in plain English and estimate its benefit given a correlation value
-- [ ] Explain when you'd use sequential testing, a switchback experiment, or a geo experiment
+- [X] Explain the difference between a primary metric, guardrail metric, and counter-metric — and give examples for the experimentation platform
+- [X] Explain what randomization unit means and what goes wrong if you pick the wrong one
+- [X] Calculate (roughly) the required sample size for a given MDE, variance, and power target
+- [X] Explain what SRM is, how to detect it, and what it means for results validity
+- [X] Explain peeking / optional stopping and why it inflates false positive rates
+- [X] Explain the delta method and when it's needed
+- [X] Explain the multiple comparisons problem and two ways to address it
+- [X] Explain CUPED in plain English and estimate its benefit given a correlation value
+- [X] Explain when you'd use sequential testing, a switchback experiment, or a geo experiment
 
 ---
 
 ## Artifacts to commit
-- [ ] `docs/reading/EXPERIMENT-METRIC-DESIGN.md`
-- [ ] `docs/reading/POWER-ANALYSIS-EXERCISE.md`
-- [ ] `docs/reading/EXPERIMENT-ANALYSIS-SQL.md`
-- [ ] `docs/reading/CUPED-EXERCISE.md`
-- [ ] `docs/reading/ADVANCED-DESIGN-SELECTION.md`
-- [ ] Glossary entries: ATE, MDE, statistical power, Type I error, Type II error, guardrail metric, randomization unit, SUTVA, SRM, CUPED, sequential testing, switchback experiment, delta method, multiple comparisons, Bonferroni correction
-- [ ] Log entry in `docs/LOG.md`
+- [X] `docs/reading/EXPERIMENT-METRIC-DESIGN.md`
+- [X] `docs/reading/POWER-ANALYSIS-EXERCISE.md`
+- [X] `docs/reading/EXPERIMENT-ANALYSIS-SQL.md`
+- [X] `docs/reading/CUPED-EXERCISE.md`
+- [X] `docs/reading/ADVANCED-DESIGN-SELECTION.md`
+- [X] Glossary entries: ATE, MDE, statistical power, Type I error, Type II error, guardrail metric, randomization unit, SUTVA, SRM, CUPED, sequential testing, switchback experiment, delta method, multiple comparisons, Bonferroni correction
+- [X] Log entry in `docs/LOG.md`
 
 > **→ Platform artifact:** Produce `docs/projects/experimentation_platform/EXPERIMENT-METHODOLOGY.md`. This is the statistical specification for the platform — it defines how the platform computes ATEs, handles multiple comparisons, applies CUPED, and detects SRM. Every statistical decision you make when building the platform should trace back to this document.

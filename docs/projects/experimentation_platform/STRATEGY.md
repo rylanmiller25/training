@@ -167,6 +167,35 @@ The simulator is a top-of-funnel hook: startups get value before they have an ex
 
 ---
 
+## Pricing model
+
+**Subscription-based: free, pro, enterprise tiers.** No per-experiment or usage-based billing.
+
+Subscription is the right model because Panel's value is not frequency-based — a founder who runs two experiments per year and makes a correct pricing decision gets enormous value. Usage-based pricing would penalize exactly that customer. Predictable subscription costs also reduce adoption friction and make enterprise budgeting straightforward.
+
+**The free tier concern:** Many users will start on free and some will stay there. This is acceptable if the free tier is designed around a genuine feature gate rather than arbitrary limits. The gate is HTE analysis — Panel's core differentiator. Free tier provides ATE-only analysis; the moment a customer wants to know whether the effect differs by segment, they need pro. This is a natural, value-aligned upgrade trigger.
+
+**Indicative tier structure** (exact pricing TBD in UNIT-ECONOMICS.md):
+
+| Feature | Free | Pro | Enterprise |
+|---|---|---|---|
+| Concurrent experiments | 1 | Unlimited | Unlimited |
+| Analysis type | ATE only | ATE + HTE + uplift scoring | ATE + HTE + uplift + causal forest (future) |
+| AI interpretation | Full | Full | Full |
+| Pre-experiment simulation | Yes | Yes | Yes |
+| CUPED variance reduction | No | Yes | Yes |
+| Data retention | 90 days | 1 year | Unlimited |
+| API access | No | Yes | Yes |
+| Raw data export | No | Yes | Yes |
+| Data warehouse integration | No | No | Yes (Snowflake, BigQuery, Redshift) |
+| Roles and permissions (RBAC) | No | No | Yes |
+| Approval workflows | No | No | Yes |
+| SSO / audit logs | No | No | Yes |
+
+> **Pricing TBD:** Exact price points, annual vs monthly discount, and enterprise contract structure are captured in `docs/projects/experimentation_platform/UNIT-ECONOMICS.md` (Phase 3 artifact).
+
+---
+
 ## Key risks and mitigations
 
 | Risk | Mitigation |

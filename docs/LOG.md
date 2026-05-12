@@ -176,15 +176,116 @@ If doing so, it is best to label a description for an expression using the AS op
     SELECT col_expression AS expr_description, …
     FROM mytable;
 
+You can also aggregate data to find important things like averages, maxes, mins, and counts. Furthermore, you can optionally group this by a specific column:
+    SELECT *, MAX(col_name) AS max_col_name
+    FROM mytable;
+    GROUP BY column
 
+#### ORDERING OF COMMANDS IN SELECT QUERIES
+SELECT is obviously the first command in a series. FROM and a JOIN command determine where the data is being pulled from, the total working set of data. 
+
+From there, WHERE determines which individual rows are included and which are excluded. The remaining rows selected through WHERE are then grouped using GROUP BY. As a result of the grouping, there will only be as many rows as there are unique values in that column. Implicitly, this means that you should only need to use this when you have aggregate functions in your query.
+
+If the query has a GROUP BY clause, then the constraints in the HAVING clause are then applied to the grouped rows.
+
+From there, if an order is specified by the ORDER BY clause, the rows are then sorted by the specified data in either ascending or descending order. The number of appearing rows can further be constrained by LIMIT and OFFSET. 
+
+    SELECT DISTINCT column, AGG_FUNC(column_or_expression), …
+    FROM mytable
+        JOIN another_table
+        ON mytable.column = another_table.column
+        WHERE constraint_expression
+        GROUP BY column
+        HAVING constraint_expression
+        ORDER BY column ASC/DESC
+        LIMIT count OFFSET COUNT;
+
+#### SQL SCHEMAS
+
+In SQL, the database schema is what describes the structure of each table, and the datatypes that each column of the table can contain.
+
+To insert new data into an existing table with existing columns:
+    INSERT INTO mytable
+    VALUES (value_or_expr, another_value_or_expr, …),
+        (value_or_expr_2, another_value_or_expr_2, …),
+        …;
+
+You can also use UPDATE to replace values in a table.
+
+DELETE can be used to delete specific rows from a table. Leave out WHERE, and all rows will be deleted:
+    DELETE FROM mytable
+    WHERE condition;
+
+To alter tables by adding or deleting columns, use ALTER TABLE and ADD or DROP:
+    ALTER TABLE mytable
+    ADD column DataType OptionalTableConstraint 
+        DEFAULT default_value;
+
+    ALTER TABLE mytable
+    DROP column_to_be_deleted;
+
+You can also use ALTER TABLE to rename the table:
+    ALTER TABLE mytable
+    RENAME TO new_table_name;
+
+To drop a table and all its data and metadata:
+    DROP TABLE IF EXISTS mytable
 
 ### Experimentation + A/B Testing
+
+Running experiments incorrectly is a result of peeking, or checking the results before the pre-specified sample size is reached. This is because significance changes depending on the sample size, and if you check before you hit a pre-specified size your significance may differ from the truth.
+
+There are a few solutions on the user's side:
+- Don't peek.
+- Use a Bayesian experiment design, which allows you to check results at any time.
+- Use a sequential design: Sequential experiment design lets you set up checkpoints in advance where you will decide whether or not to continue the experiment, and it gives you the correct significance levels.
+
+There are also solutions on the platform's side:
+- Don't compute significance tests until the experiment is done running, meaning don't present ongoing A/B results in a dashboard or anything like that.
+- Stop using significance levels to decide whether an experiment should stop or continue.
+- Consider excluding the “current estimate” of the treatment effect until the experiment is over.
+
+There are also some really cool ways to reduce the necessary sample size for tests. The first is a process called interleaving, made popular by Netflix, whereas the second is a process called CUPED, which Spotify uses.
+
+Interleaving is meant for ranking problems, typical of search results, recommendation feeds, and content ordering. It involves taking, for example, the world of all possible algorithms, taking two algorithms from that world and switching off showing the best predictions from each algorithm, and then observing the user's behavior based on what is shown. This allows Netflix to figure out which algorithms are best, and from there Netflix can run serious A/B tests based on the reduced number of algorithms.
+
+CUPED is a simple process that takes pre-treatment data and uses that to predict the unit of analysis' outcome. This reduces variance from the outcome, and therefore reduces sample size needed to test the effect of the treatment on the outcome.
 
 ---
 
 ## Phase 2 — Shipping Software
 
 ### Docker
+Docker uses containers, which essentially contain everything needed to run an application, such that things don't need to be installed on the host for the application to run, AND everything will run the same regardless of what the host is.
+
+Developers write code locally and share their work with colleagues using Docker containers, which serves as a development environment. From there, they use Docker to push their applications into controlled testing environments where the applications are tested both automatically and manually. Then, when they find bugs, they can re-work the application in the development environment before redeploying the applications back to the testing environment. After iterating until satisfied, getting the fix to customers is as simple as pushing the updated image to the production environment.
+
+The nice thing about Docker is that its so lightweight that it operates with insane speed and allows you to run applications on any type of machine or server.
+
+Docker uses a client-server architecture, which it accesses through a REST API. The Docker client talks to the Docker daemon (dockerd), which builds, runs, and distributes containers. The Docker daemon listens to API requests and manages docker objects like containers, images, networks, and volumes.
+
+The Docker client is typically how people use Docker. Running commands in a command-line like "docker run" sends those commands to the Docker daemon, which executes the commands.
+
+#### Docker Objects
+
+##### Docker Images
+A Docker image is a snapshot of instructions for how a container is to be constructed.
+
+##### Docker Containers
+A Docker container is a running instance of an image. A container is defined by its image as well as any configuration options you provide to it when you create or start it.
+
+##### Docker Volumes
+A Docker volume essentially transfers information across containers that are the same. This is important because typically containers start from the image definition each time the container is booted up, meaning any creating, updating, or deleting of files are lost once the container is exited. Volumes provide the ability to connect specific filepaths of the container back to the host machine. If you mount a directory in the container, changes in that directory are also seen on the host machine. If you mount that same directory across container restarts, those changes are preserved across the containers.
+
+Volume mounts are volumes attached to a directory where data is stored, which allows data to persist. A volume mount is essentially an opaque bucket of data. Docker manages volumes, including the volume's storage location on disk. A volume mount is a great choice when you need somewhere persistent to store your application data.
+
+Bind mounts are similar to volume mounts, but if changes are made to files that reside within containers, with bind mounts the container sees the changes made to the file instantly and doesn't require removing the container, rebuilding it, and re-running it.
+
+#### Docker Multi-Container Apps
+A container should do one thing and do it well. For this reason, and for the purpose of scaling, you should use multi-container apps rather than attempt to store everything into a single container.
+
+#### Docker Compose
+It feels like a lot to just get a container and an app with a simple purpose set up. I can't imagine configuring a more complicated app. But Docker Compose is meant to make it easier to start up an app. Docker Compose is a tool that helps you define and share multi-container applications. With Compose, you can create a YAML file to define the services and with a single command, you can spin everything up or tear it all down.
 
 ### Cloud Fundamentals
 

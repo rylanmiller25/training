@@ -2,7 +2,7 @@
 
 **Phase:** 1  
 **Slug:** `http-apis`  
-**Status:** not started  
+**Status:** Completed 
 
 ---
 
@@ -127,17 +127,17 @@ Write your answers in a note; check against httpstatuses.io.
 ---
 
 ## Checks — you understand this when you can:
-- [ ] Explain what HTTP is and the request/response cycle
-- [ ] Name the 5 main HTTP methods and when to use each
-- [ ] Decode any status code by its class (2xx/3xx/4xx/5xx)
-- [ ] Make GET and POST requests with curl, including headers and JSON body
-- [ ] Explain the difference between authentication and authorization
-- [ ] Explain what a JWT is and why it doesn't need DB lookup
-- [ ] Build a basic Postman collection with environments and variables
+- [X] Explain what HTTP is and the request/response cycle
+- [X] Name the 5 main HTTP methods and when to use each
+- [X] Decode any status code by its class (2xx/3xx/4xx/5xx)
+- [X] Make GET and POST requests with curl, including headers and JSON body
+- [X] Explain the difference between authentication and authorization
+- [X] Explain what a JWT is and why it doesn't need DB lookup
+- [X] Build a basic Postman collection with environments and variables
 
 ---
 
 ## Artifacts to commit
-- [ ] `docs/projects/phase1-postman.json` — exported Postman collection
-- [ ] Glossary entries: HTTP, REST, API, status code, header, JSON, JWT, OAuth, idempotent
-- [ ] Log entry in `docs/LOG.md`
+- [X] `docs/projects/phase1-postman.json` — exported Postman collection
+- [X] Glossary entries: HTTP, REST, API, status code, header, JSON, JWT, OAuth, idempotent
+- [X] Log entry in `docs/LOG.md`

@@ -2,7 +2,7 @@
 
 **Phase:** 2  
 **Slug:** `docker`  
-**Status:** not started  
+**Status:** Started  
 
 ---
 
@@ -149,16 +149,16 @@ Write a 2-sentence note in `docs/LOG.md` explaining what you observed.
 ---
 
 ## Checks — you understand this when you can:
-- [ ] Explain the difference between an image and a container
-- [ ] Run a container with port mapping and volume mount
-- [ ] Write a Dockerfile for a simple Node.js app
-- [ ] Explain what layer caching is and why COPY order matters
-- [ ] Use Docker Compose to run a multi-container app
-- [ ] Explain when you'd use a named volume vs bind mount
+- [X] Explain the difference between an image and a container
+- [X] Run a container with port mapping and volume mount
+- [X] Write a Dockerfile for a simple Node.js app
+- [X] Explain what layer caching is and why COPY order matters
+- [X] Use Docker Compose to run a multi-container app
+- [X] Explain when you'd use a named volume vs bind mount
 
 ---
 
 ## Artifacts to commit
-- [ ] `docs/projects/docker-hello/` — Dockerfile, server.js, docker-compose.yml
-- [ ] Glossary entries: container, image, Dockerfile, layer caching, volume, Docker Compose
-- [ ] Log entry in `docs/LOG.md`
+- [X] `docs/projects/docker-hello/` — Dockerfile, server.js, docker-compose.yml
+- [X] Glossary entries: container, image, Dockerfile, layer caching, volume, Docker Compose
+- [X] Log entry in `docs/LOG.md`

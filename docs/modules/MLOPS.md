@@ -156,6 +156,51 @@ The [Hidden Technical Debt in ML Systems](https://papers.nips.cc/paper/2015/file
 
 A TPM working on an ML program should be able to identify these risks and ask the right questions during design reviews.
 
+### Background job pipelines for Panel's causal forest
+
+Causal forests in Panel don't run in response to a user clicking a button. They run as background jobs triggered when an experiment reaches a result-ready state. This is the right architecture for any ML workload that is too slow to run synchronously and not time-critical enough to require streaming.
+
+**The Panel causal forest pipeline — end to end:**
+
+```
+Experiment run status → complete
+        ↓
+Job enqueued: { run_id, experiment_id, project_id }
+        ↓
+Worker picks up job
+        ↓
+Pull data: assignments + events + users (joined by run_id, within outcome window)
+        ↓
+Assemble feature matrix X (user covariates), treatment vector T, outcome vector Y
+        ↓
+Fit CausalForestDML (n_jobs=-1 to parallelize across cores)
+        ↓
+Extract: individual treatment effects, confidence intervals
+        ↓
+Write to results table: result_type='hte', payload=effects+intervals, cuped_applied, interpretation
+        ↓
+UI shows results as available — user sees no waiting
+```
+
+**Queue implementation for the MVP:**
+Use BullMQ (TypeScript-native, Redis-backed). When an experiment run completes, the API server enqueues a job. A separate worker process runs the Python EconML code via subprocess or a lightweight Python microservice. Results are written back to PostgreSQL.
+
+No need for Kafka, SQS, or a distributed task system at MVP scale. A single worker handles jobs sequentially; add more workers behind the same queue to parallelize across concurrent experiments.
+
+**An important simplification — no model persistence:**
+Unlike a deployed ML model that needs periodic retraining, Panel's causal forest is fit fresh for each experiment. There's no persistent model that accumulates drift. Each experiment run produces its own fitted forest; "training" and "inference" happen in a single job. This eliminates the standard MLOps drift problem for the model itself — drift only matters in the data pipeline (e.g., a bug in the event join logic), not the model.
+
+**Parallelization:**
+EconML uses joblib internally. Setting `n_jobs=-1` uses all available CPU cores. On a compute-optimized instance (e.g., AWS c6a.4xlarge, 16 cores), a causal forest on a 50K-user dataset with 5–10 covariates completes in under 30 seconds. The number of trees (`n_estimators`) is the primary lever for trading speed against estimate stability — 100 trees is a reasonable default; 500 trees adds ~5× compute time for marginal stability gains.
+
+**What triggers a job vs. what triggers a retry:**
+- **Job trigger:** experiment run status transitions to `complete`, or user manually requests HTE analysis
+- **Job failure:** worker crashes, EconML throws an exception, dataset too small for the model to fit
+- **Retry policy:** 3 retries with exponential backoff; if all fail, write `status: 'failed'` to the results table with a plain-English error message surfaced in the UI ("Your experiment doesn't have enough users in each subgroup to fit the causal model reliably. The interaction terms result is still available.")
+- **Minimum dataset size:** enforce a floor before enqueueing — if total assigned users < 200, skip causal forest and return only the interaction terms result
+
+---
+
 ### Research-to-production handoff
 
 The hardest transition in ML. Research models are built to maximize offline metrics in a clean environment. Production models must:
@@ -198,6 +243,20 @@ Design a model deployment workflow for the causal forest. Write a step-by-step p
 - What triggers a rollback? Who can initiate it?
 Save to `docs/reading/MODEL-DEPLOYMENT-WORKFLOW.md`.
 
+**Set 5 — Build the background job queue (90 min):**
+This is the core infrastructure exercise for Panel's causal forest feature. You'll implement the job queue that triggers causal forest analysis when an experiment completes.
+
+1. Set up a local Redis instance via Docker (`docker run -d -p 6379:6379 redis`)
+2. Install BullMQ (`npm install bullmq`)
+3. Write a TypeScript producer that enqueues a `causal_forest_requested` job when called with a `run_id`
+4. Write a TypeScript worker that picks up the job, logs the `run_id`, simulates a 5-second "analysis" step, then writes a mock result object to a local PostgreSQL `results` table
+5. Verify: enqueue 3 jobs in sequence, confirm all 3 complete and the results table has 3 rows
+6. Test failure handling: make the worker throw on the second job; confirm BullMQ retries it; confirm the third job still completes
+
+Save code to `src/jobs/causal-forest-queue.ts` and `src/jobs/causal-forest-worker.ts`. Save a short write-up of what you observed (retry behavior, job ordering, failure handling) to `docs/reading/BACKGROUND-JOB-EXERCISE.md`.
+
+> **Why this matters for the capstone:** The causal forest job queue is a real component of the Panel architecture. This exercise produces code that can be adapted directly into the capstone build.
+
 ---
 
 ## Checks — you understand this when you can:
@@ -207,6 +266,9 @@ Save to `docs/reading/MODEL-DEPLOYMENT-WORKFLOW.md`.
 - [ ] Identify 3 types of ML technical debt from the Sculley paper and give a concrete example of each
 - [ ] Explain the difference between data drift and concept drift
 - [ ] Design a shadow or canary deployment for a model update
+- [ ] Explain why causal forests in Panel run as background jobs rather than synchronously
+- [ ] Describe the full Panel causal forest pipeline from experiment completion to results table
+- [ ] Implement a basic BullMQ producer/worker pair with retry handling
 
 ---
 
@@ -215,6 +277,9 @@ Save to `docs/reading/MODEL-DEPLOYMENT-WORKFLOW.md`.
 - [ ] `docs/reading/ML-LIFECYCLE-DIAGRAM.md`
 - [ ] `docs/reading/ML-DEBT-ANALYSIS.md`
 - [ ] `docs/reading/MODEL-DEPLOYMENT-WORKFLOW.md`
+- [ ] `docs/reading/BACKGROUND-JOB-EXERCISE.md`
+- [ ] `src/jobs/causal-forest-queue.ts`
+- [ ] `src/jobs/causal-forest-worker.ts`
 - [ ] Platform artifact: `docs/projects/experimentation_platform/TRAINING-PIPELINE-DESIGN.md`
-- [ ] Glossary entries: MLOps, experiment tracking, model registry, feature store, training-serving skew, data drift, concept drift, canary deployment, shadow deployment, pipeline orchestration
+- [ ] Glossary entries: MLOps, experiment tracking, model registry, feature store, training-serving skew, data drift, concept drift, canary deployment, shadow deployment, pipeline orchestration, background job queue, BullMQ
 - [ ] Log entry in `docs/LOG.md`

@@ -2,7 +2,7 @@
 
 **Phase:** 1  
 **Slug:** `git-github`  
-**Status:** not started  
+**Status:** Completed  
 
 ---
 
